@@ -19,13 +19,8 @@ body {
   position: relative;
 }
 
-.main-content {
+.main {
   display: grid;
   grid-template-columns: 0.82fr 0.82fr 1fr;
   grid-template-rows: auto;
-
-  &__feed {
-    display: flex;
-    flex-direction: column;
-  }
 }

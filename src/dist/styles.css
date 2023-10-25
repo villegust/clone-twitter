@@ -16,14 +16,10 @@ body {
   position: relative;
 }
 
-.main-content {
+.main {
   display: grid;
   grid-template-columns: 0.82fr 0.82fr 1fr;
   grid-template-rows: auto;
-}
-.main-content__feed {
-  display: flex;
-  flex-direction: column;
 }
 
 .home {
@@ -40,6 +36,7 @@ body {
   display: inherit;
   justify-content: space-around;
   position: relative;
+  border-bottom: 1px solid #38444d;
 }
 .home__btn button {
   background-color: #010103;
