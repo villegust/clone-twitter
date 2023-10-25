@@ -8,23 +8,33 @@
 
   &__profileAndInput {
     display: flex;
+    flex-direction: column;
     padding: 3rem 3rem 0 3rem;
     gap: 2rem;
 
-    textarea {
-      background-color: $bg-black;
-      width: 100%;
-      min-height: 40px;
-      font-size: 2rem;
-      border: none;
-      border-bottom: 1px solid #38444d;
+    &__text {
+      display: flex;
 
-      resize: none;
-      color: white;
+      textarea {
+        margin-left: 2rem;
+        background-color: $bg-black;
+        width: 100%;
+        min-height: 40px;
+        font-size: 2rem;
+        border: none;
+        border-bottom: 1px solid #38444d;
+        resize: none;
+        color: white;
 
-      &:focus {
-        outline: none;
+        &:focus {
+          outline: none;
+        }
       }
+    }
+
+    img {
+      max-width: 100%;
+      max-height: fit-content;
     }
   }
 
@@ -36,12 +46,17 @@
     &__insert {
       display: flex;
 
-      span {
+      label {
         padding: 0 0.75rem;
 
         &:hover {
           cursor: pointer;
         }
+      }
+
+      #imageUpload {
+        display: none;
+        visibility: none;
       }
     }
 
