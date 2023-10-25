@@ -1,0 +1,81 @@
+@use "../globals" as *;
+
+.sidebar {
+  width: 275px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  border-right: 1px solid #38444d;
+  transition: width 0.3s;
+  z-index: 100;
+
+  .sidebar-menu {
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      width: fit-content;
+      padding: 16px;
+      cursor: pointer;
+      transition: background 0.2s;
+      border-radius: 10rem;
+
+      span {
+        margin-left: 2rem;
+      }
+
+      &:hover {
+        background: $color-grey;
+      }
+    }
+  }
+  button {
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 90%;
+    padding: 18px;
+    border-radius: 10rem;
+    background-color: $color-twitter;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  .profile {
+    position: absolute;
+    bottom: 2rem;
+    padding: 8px 16px 8px 16px;
+    border-radius: 10rem;
+    min-width: 90%;
+
+    &__content {
+      display: flex;
+
+      &__text {
+        margin-left: 1rem;
+
+        h6 {
+          font-size: 1.6rem;
+          font-weight: 400;
+        }
+
+        p {
+          font-size: 1.6rem;
+          font-weight: 300;
+          color: $text-grey;
+        }
+      }
+    }
+
+    &:hover {
+      background: $color-grey;
+    }
+  }
+}

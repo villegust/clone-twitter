@@ -1,9 +1,11 @@
-import Image from 'next/image'
+import Image from "next/image";
+import Sidebar from "../components/Sidebar";
 
 export default function Home() {
   return (
     <main className="main">
-      <div className="description">
+      <Sidebar />
+      {/* <div className="description">
         <p>
           Get started by editing&nbsp;
           <code className="code">src/app/page.tsx</code>
@@ -88,7 +90,7 @@ export default function Home() {
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
-      </div>
+      </div> */}
     </main>
-  )
+  );
 }
