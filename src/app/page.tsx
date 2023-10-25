@@ -1,96 +1,45 @@
-import Image from "next/image";
+"use client";
+
+import React from "react";
+import { useState } from "react";
+
 import Sidebar from "../components/Sidebar";
+import NewPost from "../components/NewPost";
 
 export default function Home() {
+  const [fyOrFollow, setFyOrFollow] = useState("For You");
+
+  console.log(fyOrFollow);
+
   return (
     <main className="main">
-      <Sidebar />
-      {/* <div className="description">
-        <p>
-          Get started by editing&nbsp;
-          <code className="code">src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="vercelLogo"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+      <div className="main-content">
+        <Sidebar />
+        <div className="main-content__feed">
+          <div className="home">
+            <h1>Home</h1>
+            <div className="home__btn">
+              <button
+                className={fyOrFollow === "For You" ? "active" : ""}
+                onClick={(e) => {
+                  setFyOrFollow("For You");
+                }}
+              >
+                For You
+              </button>
+              <button
+                className={fyOrFollow === "Following" ? "active" : ""}
+                onClick={(e) => {
+                  setFyOrFollow("Following");
+                }}
+              >
+                Following
+              </button>
+            </div>
+          </div>
+          <NewPost />
         </div>
       </div>
-
-      <div className="center">
-        <Image
-          className="logo"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="grid">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="card"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="card"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="card"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="card"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div> */}
     </main>
   );
 }

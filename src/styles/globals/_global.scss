@@ -19,8 +19,13 @@ body {
   position: relative;
 }
 
-.container {
-  max-width: 133rem;
-  margin: 0 auto;
-  padding: 0 2.5rem;
+.main-content {
+  display: grid;
+  grid-template-columns: 0.82fr 0.82fr 1fr;
+  grid-template-rows: auto;
+
+  &__feed {
+    display: flex;
+    flex-direction: column;
+  }
 }

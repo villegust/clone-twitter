@@ -1,0 +1,73 @@
+@use "../globals" as *;
+
+.newpost-content {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #38444d;
+  border-right: 1px solid #38444d;
+
+  &__profileAndInput {
+    display: flex;
+    padding: 3rem 3rem 0 3rem;
+    gap: 2rem;
+
+    textarea {
+      background-color: $bg-black;
+      width: 100%;
+      min-height: 40px;
+      font-size: 2rem;
+      border: none;
+      border-bottom: 1px solid #38444d;
+
+      resize: none;
+      color: white;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__insertAndPost {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    &__insert {
+      display: flex;
+
+      span {
+        padding: 0 0.75rem;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    // input {
+    //   width: 30px;
+    //   height: 30px;
+    // }
+
+    &__post {
+      margin-bottom: 2rem;
+      button {
+        margin-top: 2rem;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 10rem;
+        background-color: $color-twitter;
+        color: white;
+        font-size: 1.6rem;
+        font-weight: 600;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

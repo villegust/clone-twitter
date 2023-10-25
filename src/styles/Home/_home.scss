@@ -1,0 +1,49 @@
+@use "../globals" as *;
+
+.home {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #38444d;
+  border-right: 1px solid #38444d;
+
+  h1 {
+    margin: 2rem;
+    font-size: 1.8rem;
+  }
+
+  &__btn {
+    display: inherit;
+    justify-content: space-around;
+    position: relative;
+
+    button {
+      background-color: $bg-black;
+      border: none;
+      color: white;
+      width: 50%;
+      padding: 2rem;
+      font-weight: 600;
+      font-size: 1.4rem;
+
+      &:hover {
+        background-color: $color-grey;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.active {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 5rem;
+    height: 3px;
+    background: $color-twitter;
+    bottom: 0;
+    left: 0;
+    transform: translate(250%, 50%);
+  }
+}
