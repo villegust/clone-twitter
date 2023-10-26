@@ -18,8 +18,46 @@ body {
 
 .main {
   display: grid;
-  grid-template-columns: 0.82fr 0.82fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1b95e0 #000000;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #000000;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #000000;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #000000;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #1b95e0;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #1b95e0;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #1b95e0;
 }
 
 .home {
@@ -85,8 +123,12 @@ body {
   font-weight: 400;
 }
 
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .sidebar {
-  width: 31%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;

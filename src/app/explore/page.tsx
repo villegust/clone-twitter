@@ -1,6 +1,6 @@
 import React from "react";
 
-import Sidebar from "../components/sidebar";
+import Sidebar from "../../components/sidebar";
 
 export default function Page() {
   return (

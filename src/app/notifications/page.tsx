@@ -1,7 +1,7 @@
 import React from "react";
 
-import Sidebar from "../components/sidebar";
-import Notification from "../components/notification";
+import Sidebar from "../../components/sidebar";
+import Notification from "../../components/notification";
 
 export default function Page() {
   return (
