@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import NewPost from "./NewPost";
+import NewPost from "./newPost";
+import Post from "./post";
 
-const Feed = () => {
+export default function Feed({ name, POST_DATA }: any) {
   const [fyOrFollow, setFyOrFollow] = useState("For You");
   return (
     <div className="home">
-      <h1>Home</h1>
+      <h1>{name}</h1>
       <div className="home__btn">
         <button
           className={fyOrFollow === "For You" ? "active" : ""}
@@ -15,7 +16,7 @@ const Feed = () => {
             setFyOrFollow("For You");
           }}
         >
-          For You
+          <p className={fyOrFollow === "For You" ? "" : "inactive"}>For You</p>
         </button>
         <button
           className={fyOrFollow === "Following" ? "active" : ""}
@@ -23,12 +24,13 @@ const Feed = () => {
             setFyOrFollow("Following");
           }}
         >
-          Following
+          <p className={fyOrFollow === "For You" ? "inactive" : ""}>
+            Following
+          </p>
         </button>
       </div>
       <NewPost />
+      <Post POST_DATA={POST_DATA} />
     </div>
   );
-};
-
-export default Feed;
+}

@@ -48,3 +48,23 @@
     transform: translate(250%, 50%);
   }
 }
+
+.noti-active {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 5rem;
+    height: 3px;
+    background: $color-twitter;
+    bottom: 0;
+    left: 0;
+    transform: translate(150%, 50%);
+  }
+}
+
+.inactive {
+  color: $text-grey;
+  font-weight: 400;
+}

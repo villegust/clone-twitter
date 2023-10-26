@@ -29,6 +29,8 @@
       cursor: pointer;
       transition: background 0.2s;
       border-radius: 10rem;
+      text-decoration: none;
+      color: white;
 
       span {
         margin-left: 2rem;
@@ -87,4 +89,9 @@
       cursor: pointer;
     }
   }
+}
+
+.links {
+  text-decoration: none;
+  color: white;
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Sidebar: React.FC = () => {
   return (
@@ -14,33 +15,41 @@ const Sidebar: React.FC = () => {
               height={25}
             />
           </li>
-          <li id="home">
-            <Image
-              src="/images/sidebar/home.svg"
-              alt="Logo"
-              width={25}
-              height={25}
-            />
-            <span>Home</span>
-          </li>
-          <li>
-            <Image
-              src="/images/sidebar/search.svg"
-              alt="Explore"
-              width={25}
-              height={25}
-            />
-            <span>Explore</span>
-          </li>
-          <li>
-            <Image
-              src="/images/sidebar/bell.svg"
-              alt="Notifications"
-              width={25}
-              height={25}
-            />
-            <span>Notifications</span>
-          </li>
+          <Link className="links" href="/">
+            <li id="home">
+              <Image
+                src="/images/sidebar/home.svg"
+                alt="Logo"
+                width={25}
+                height={25}
+              />
+              <span>Home</span>
+            </li>
+          </Link>
+
+          <Link className="links" href="/explore">
+            <li>
+              <Image
+                src="/images/sidebar/search.svg"
+                alt="Explore"
+                width={25}
+                height={25}
+              />
+              <span>Explore</span>
+            </li>
+          </Link>
+
+          <Link className="links" href="/notifications">
+            <li>
+              <Image
+                src="/images/sidebar/bell.svg"
+                alt="Notifications"
+                width={25}
+                height={25}
+              />
+              <span>Notifications</span>
+            </li>
+          </Link>
           <li>
             <Image
               src="/images/sidebar/message.svg"

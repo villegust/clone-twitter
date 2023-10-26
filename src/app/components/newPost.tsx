@@ -1,6 +1,9 @@
 import React, { useState, ChangeEvent } from "react";
 import Image from "next/image";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faX } from "@fortawesome/free-solid-svg-icons";
+
 const NewPost = () => {
   const [imagePreview, setImagePreview] = useState<string | null>(null);
 
@@ -35,7 +38,18 @@ const NewPost = () => {
             />
             <textarea name="" id="" placeholder="What's happening?"></textarea>
           </div>
-          {imagePreview && <img src={imagePreview} alt="Image Preview" />}
+          {imagePreview && (
+            <div className="newpost-content__profileAndInput__image-preview">
+              <img src={imagePreview} alt="Image Preview" />
+              <button
+                onClick={() => {
+                  setImagePreview(null);
+                }}
+              >
+                <FontAwesomeIcon icon={faX} />
+              </button>
+            </div>
+          )}
         </div>
 
         <div className="newpost-content__insertAndPost">

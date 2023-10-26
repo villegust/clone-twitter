@@ -1,13 +1,14 @@
 import React from "react";
+import Link from "next/link";
 
-import Sidebar from "../components/Sidebar";
-import Feed from "../components/Feed";
+import { POST_DATA } from "../../data";
 
-export default function Home() {
+import Home from "./home/page";
+
+export default function Page() {
   return (
-    <main className="main">
-      <Sidebar />
-      <Feed />
-    </main>
+    <>
+      <Home POST_DATA={POST_DATA} />
+    </>
   );
 }
