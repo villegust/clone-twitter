@@ -1,14 +1,15 @@
 import React from "react";
-import Link from "next/link";
 
 import { POST_DATA } from "../../data";
 
-import Home from "./home/page";
+import Sidebar from "./components/sidebar";
+import Feed from "./components/feed";
 
 export default function Page() {
   return (
-    <>
-      <Home POST_DATA={POST_DATA} />
-    </>
+    <main className="main">
+      <Sidebar />
+      <Feed name={"Home"} POST_DATA={POST_DATA} />
+    </main>
   );
 }
