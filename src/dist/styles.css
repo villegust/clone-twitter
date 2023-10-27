@@ -19,7 +19,7 @@ body {
 .main {
   display: grid;
   grid-template-columns: 0.82fr 0.82fr 1fr;
-  grid-template-rows: 0fr 1fr 1fr;
+  grid-template-rows: 12rem 1fr 1fr;
   grid-template-areas: "sidebar head searchheader" "sidebar main search" "sidebar main search";
 }
 @media (max-width: 1330px) {
@@ -68,12 +68,14 @@ body {
 
 .header {
   grid-area: head;
+  border-right: 1px solid #38444d;
 }
 .header__feeds {
   display: flex;
+  position: fixed;
+  width: 31%;
   flex-direction: column;
   background-color: #010103;
-  border-right: 1px solid #38444d;
 }
 .header__feeds h1 {
   margin: 2rem;
@@ -188,10 +190,10 @@ body {
 nav {
   display: flex;
   justify-content: flex-end;
-  grid-area: sidebar;
 }
 
 .sidebar {
+  grid-area: sidebar;
   display: flex;
   flex-direction: column;
   align-items: flex-end;

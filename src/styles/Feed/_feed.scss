@@ -2,12 +2,14 @@
 
 .header {
   grid-area: head;
+  border-right: 1px solid #38444d;
 
   &__feeds {
     display: flex;
+    position: fixed;
+    width: 31%;
     flex-direction: column;
     background-color: $bg-black;
-    border-right: 1px solid #38444d;
 
     h1 {
       margin: 2rem;
