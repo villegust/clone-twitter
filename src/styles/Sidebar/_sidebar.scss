@@ -3,6 +3,7 @@
 nav {
   display: flex;
   justify-content: flex-end;
+  grid-area: sidebar;
 }
 .sidebar {
   display: flex;

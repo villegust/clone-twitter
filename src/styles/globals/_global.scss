@@ -21,9 +21,20 @@ body {
 
 .main {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  // grid-template-columns: 0.82fr 0.82fr 1fr;
-  grid-template-rows: auto;
+  grid-template-columns: 0.82fr 0.82fr 1fr;
+  grid-template-rows: 0fr 1fr 1fr;
+  grid-template-areas:
+    "sidebar head searchheader"
+    "sidebar main search"
+    "sidebar main search";
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr;
+  // // grid-template-columns: 0.82fr 0.82fr 1fr;
+  // grid-template-rows: auto;
+
+  @media (max-width: 1330px) {
+    grid-template-columns: 0.5fr 1fr 1fr;
+  }
 }
 
 /* Firefox */
