@@ -45,35 +45,35 @@ const Post = ({ POST_DATA }: any) => {
               <div className="post-content__like-and-share__icons">
                 <FontAwesomeIcon icon={faComment} size="lg" />
                 {items.comments >= 1000000
-                  ? (items.comments / 1000000).toFixed(0) + "mn"
+                  ? (items.comments / 1000000).toFixed(0) + " mn"
                   : items.comments >= 1000
-                  ? (items.comments / 1000).toFixed(0) + "tn"
+                  ? (items.comments / 1000).toFixed(0) + " tn"
                   : items.comments}
               </div>
               <div className="post-content__like-and-share__icons">
                 <FontAwesomeIcon icon={faRepeat} rotation={90} size="lg" />
                 {items.reposts >= 1000000
-                  ? (items.reposts / 1000000).toFixed(0) + "mn"
+                  ? (items.reposts / 1000000).toFixed(0) + " mn"
                   : items.reposts >= 1000
-                  ? (items.reposts / 1000).toFixed(0) + "tn"
+                  ? (items.reposts / 1000).toFixed(0) + " tn"
                   : items.reposts}
               </div>
 
               <div className="post-content__like-and-share__icons">
                 <FontAwesomeIcon icon={faHeart} size="lg" />
                 {items.likes >= 1000000
-                  ? (items.likes / 1000000).toFixed(0) + "mn"
+                  ? (items.likes / 1000000).toFixed(0) + " mn"
                   : items.likes >= 1000
-                  ? (items.likes / 1000).toFixed(0) + "tn"
+                  ? (items.likes / 1000).toFixed(0) + " tn"
                   : items.likes}
               </div>
 
               <div className="post-content__like-and-share__icons">
                 <FontAwesomeIcon icon={faChartSimple} size="lg" />
                 {items.views >= 1000000
-                  ? (items.views / 1000000).toFixed(0) + "mn"
+                  ? (items.views / 1000000).toFixed(0) + " mn"
                   : items.views >= 1000
-                  ? (items.views / 1000).toFixed(0) + "tn"
+                  ? (items.views / 1000).toFixed(0) + " tn"
                   : items.views}
               </div>
 

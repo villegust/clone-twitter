@@ -22,11 +22,11 @@ body {
 .main {
   display: grid;
   grid-template-columns: 0.82fr 0.82fr 1fr;
-  grid-template-rows: 12rem 1fr 1fr;
+  grid-template-rows: 6rem 1fr 1fr;
   grid-template-areas:
     "sidebar head searchheader"
-    "sidebar main search"
-    "sidebar main search";
+    "sidebar main trends"
+    "sidebar main trends";
   // display: grid;
   // grid-template-columns: 1fr 1fr 1fr;
   // // grid-template-columns: 0.82fr 0.82fr 1fr;

@@ -1,17 +1,18 @@
 @use "../globals" as *;
 
 .search-section {
-  width: 53%;
+  @include RightsideWidth;
 }
 
 .search-content {
-  padding: 0.5rem 0 0 3rem;
+  @include RightsidePadding;
 
   .search-bar {
     display: flex;
     align-items: center;
     position: relative;
     transition: box-shadow 0.3s;
+    margin-bottom: 5px;
 
     .search-icon {
       display: flex;

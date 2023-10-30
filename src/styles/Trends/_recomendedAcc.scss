@@ -1,0 +1,94 @@
+@use "../globals" as *;
+
+.account-section {
+  @include RightsideWidth;
+  margin-top: 1rem;
+}
+
+.account-content {
+  @include RightsidePadding;
+  display: flex;
+  flex-direction: column;
+
+  &__box {
+    background-color: $color-search;
+    border-radius: 2rem;
+
+    a {
+      text-decoration: none;
+      color: $text-white;
+    }
+
+    &__title {
+      padding: 2rem 2rem 0 2rem;
+      margin-bottom: 1rem;
+
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    &__account-box {
+      display: flex;
+      padding: 1.5rem 2rem 1.5rem 2rem;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: $color-grey;
+      }
+
+      &__image {
+        margin-right: 1.5rem;
+      }
+
+      &__info {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+
+        h3 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          color: $text-grey;
+          font-size: 1.4rem;
+        }
+      }
+      &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+          justify-content: center;
+          align-items: center;
+          border: none;
+          padding: 8px 16px;
+          border-radius: 10rem;
+          background-color: $color-white;
+          font-size: 1.2rem;
+          font-weight: 600;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    &__view-more {
+      font-size: 1.4rem;
+      padding: 2rem;
+      border-bottom-left-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+      transition: 0.3s;
+
+      a {
+        color: $color-twitter !important;
+      }
+      &:hover {
+        background-color: $color-grey;
+      }
+    }
+  }
+}

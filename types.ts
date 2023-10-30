@@ -1,5 +1,6 @@
 interface Data {
     id: number,
+    profilePic: string,
     username: string,
     name: string,
     posted: string,
@@ -9,4 +10,9 @@ interface Data {
     reposts: number,
     likes: number,
     views: number 
+}
+
+interface Trends {
+    name: string,
+    totalPosts: number,
 }

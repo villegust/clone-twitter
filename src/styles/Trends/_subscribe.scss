@@ -1,0 +1,48 @@
+@use "../globals" as *;
+
+.subscribe {
+  @include RightsideWidth;
+}
+
+.subscribe-content {
+  @include RightsidePadding;
+  display: flex;
+  flex-direction: column;
+
+  &__box {
+    padding: 2rem;
+    background-color: $color-search;
+    border-radius: 2rem;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+
+    &__btn {
+      margin-top: 2rem;
+
+      button {
+        justify-content: center;
+        align-items: center;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 10rem;
+        background-color: $color-twitter;
+        color: white;
+        font-size: 1.6rem;
+        font-weight: 600;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

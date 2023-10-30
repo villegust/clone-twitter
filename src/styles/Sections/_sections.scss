@@ -1,0 +1,11 @@
+.home {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #38444d;
+  border-right: 1px solid #38444d;
+}
+
+.trends {
+  grid-area: trends;
+}
