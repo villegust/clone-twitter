@@ -25,8 +25,8 @@ export default function Page() {
       </div>
       <div className="trends">
         <Subscribe />
-        <Accounts POST_DATA={POST_DATA} />
         <Trends TREND_DATA={TREND_DATA} />
+        <Accounts POST_DATA={POST_DATA} />
       </div>
     </main>
   );

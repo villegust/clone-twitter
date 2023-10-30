@@ -18,9 +18,6 @@ nav {
   z-index: 100;
 
   .sidebar-menu {
-    #home {
-      font-weight: 800;
-    }
     li {
       display: flex;
       justify-content: center;
@@ -98,4 +95,8 @@ nav {
 .links {
   text-decoration: none;
   color: white;
+}
+
+.bold-link {
+  font-weight: 700;
 }

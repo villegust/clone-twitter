@@ -10,9 +10,9 @@ export default function Notification({ name }: Notifications) {
   const [avm, setAvm] = useState("All");
 
   return (
-    <div className="home">
+    <div className="header__feeds">
       <h1>{name}</h1>
-      <div className="home__btn">
+      <div className="header__feeds__btn">
         <button
           className={avm === "All" ? "noti-active" : ""}
           onClick={(e) => {

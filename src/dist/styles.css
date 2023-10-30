@@ -156,6 +156,14 @@ body {
   width: 53%;
 }
 
+.search-section-explore {
+  width: 100%;
+  border-right: 1px solid #38444d;
+}
+.search-section-explore .explore {
+  width: 90%;
+}
+
 .search-content {
   padding: 0.5rem 0 0 3rem;
 }
@@ -209,9 +217,6 @@ nav {
   border-right: 1px solid #38444d;
   transition: width 0.3s;
   z-index: 100;
-}
-.sidebar .sidebar-menu #home {
-  font-weight: 800;
 }
 .sidebar .sidebar-menu li {
   display: flex;
@@ -279,6 +284,10 @@ nav {
 .links {
   text-decoration: none;
   color: white;
+}
+
+.bold-link {
+  font-weight: 700;
 }
 
 .newpost-content {
@@ -524,6 +533,10 @@ nav {
 }
 .trend-content__box__trend-box__top span {
   color: #7e7e7e;
+  border-radius: 10rem;
+}
+.trend-content__box__trend-box__top span:hover {
+  cursor: pointer;
 }
 .trend-content__box__trend-box__trend-text {
   margin-top: 2px;

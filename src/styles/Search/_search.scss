@@ -4,6 +4,15 @@
   @include RightsideWidth;
 }
 
+.search-section-explore {
+  width: 100%;
+  border-right: 1px solid #38444d;
+
+  .explore {
+    width: 90%;
+  }
+}
+
 .search-content {
   @include RightsidePadding;
 

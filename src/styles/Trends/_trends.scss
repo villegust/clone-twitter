@@ -44,6 +44,11 @@
 
         span {
           color: $text-grey;
+          border-radius: 10rem;
+
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
 
