@@ -29,13 +29,12 @@ body {
 }
 @media (max-width: 1010px) {
   .main {
-    grid-template-columns: 0.3fr 1fr auto;
+    grid-template-columns: 0.3fr 1fr 0.3fr;
   }
 }
 @media (max-width: 500px) {
   .main {
     grid-template-columns: 1fr;
-    grid-template-rows: 0fr 1fr 12rem;
     grid-template-areas: "head" "main" "sidebar";
   }
 }
@@ -82,7 +81,6 @@ body {
   grid-area: main;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid #38444d;
   border-right: 1px solid #38444d;
 }
 
@@ -202,8 +200,12 @@ body {
 }
 
 .search-section-explore {
-  width: 100%;
   border-right: 1px solid #38444d;
+}
+@media (max-width: 500px) {
+  .search-section-explore {
+    grid-area: head;
+  }
 }
 .search-section-explore .explore {
   width: 90%;
@@ -216,7 +218,6 @@ body {
   display: flex;
   align-items: center;
   position: relative;
-  transition: box-shadow 0.3s;
   margin-bottom: 5px;
 }
 .search-content .search-bar .search-icon {
@@ -235,7 +236,6 @@ body {
   background-color: #1b1e20;
   color: #a79e9e;
   border: none;
-  flex: 1;
   font-size: 1.5rem;
   outline: none;
   padding-left: 5rem;
@@ -669,6 +669,69 @@ nav {
   background-color: rgba(248, 248, 248, 0.1529411765);
 }
 
+.your-trend-section {
+  margin-top: 1rem;
+}
+
+.your-trend-content {
+  display: flex;
+  flex-direction: column;
+}
+.your-trend-content__box__title {
+  padding: 2rem 2rem 0 2rem;
+  margin-bottom: 1rem;
+}
+.your-trend-content__box__title h2 {
+  font-size: 2rem;
+}
+.your-trend-content__box__trend-box {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+  transition: 0.3s;
+}
+.your-trend-content__box__trend-box:hover {
+  background-color: rgba(248, 248, 248, 0.1529411765);
+}
+.your-trend-content__box__trend-box__top {
+  display: flex;
+  justify-content: space-between;
+}
+.your-trend-content__box__trend-box__top p {
+  font-size: 1.2rem;
+  color: #7e7e7e;
+}
+.your-trend-content__box__trend-box__top span {
+  color: #7e7e7e;
+  border-radius: 10rem;
+}
+.your-trend-content__box__trend-box__top span:hover {
+  cursor: pointer;
+}
+.your-trend-content__box__trend-box__trend-text {
+  margin-top: 2px;
+}
+.your-trend-content__box__trend-box__trend-text h2 {
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+}
+.your-trend-content__box__trend-box__trend-text p {
+  font-size: 1.2rem;
+  color: #7e7e7e;
+}
+.your-trend-content__box__view-more {
+  font-size: 1.4rem;
+  padding: 2rem;
+  transition: 0.3s;
+}
+.your-trend-content__box__view-more a {
+  color: #1b95e0;
+  text-decoration: none;
+}
+.your-trend-content__box__view-more:hover {
+  background-color: rgba(248, 248, 248, 0.1529411765);
+}
+
 .account-section {
   width: 53%;
   margin-top: 1rem;
@@ -683,6 +746,11 @@ nav {
   padding: 0.5rem 0 0 3rem;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 1010px) {
+  .account-content {
+    display: none;
+  }
 }
 .account-content__box {
   background-color: #1b1e20;

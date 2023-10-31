@@ -9,8 +9,11 @@
 }
 
 .search-section-explore {
-  width: 100%;
   border-right: 1px solid #38444d;
+
+  @media (max-width: 500px) {
+    grid-area: head;
+  }
 
   .explore {
     width: 90%;
@@ -24,7 +27,6 @@
     display: flex;
     align-items: center;
     position: relative;
-    transition: box-shadow 0.3s;
     margin-bottom: 5px;
 
     .search-icon {
@@ -44,7 +46,6 @@
       background-color: $color-search;
       color: $text-search;
       border: none;
-      flex: 1;
       font-size: 1.5rem;
       outline: none;
       padding-left: 5rem; // Ensure input text doesn't overlap the icon

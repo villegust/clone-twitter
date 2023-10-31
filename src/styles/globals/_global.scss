@@ -27,23 +27,17 @@ body {
     "sidebar head searchheader"
     "sidebar main trends"
     "sidebar main trends";
-  // display: grid;
-  // grid-template-columns: 1fr 1fr 1fr;
-  // // grid-template-columns: 0.82fr 0.82fr 1fr;
-  // grid-template-rows: auto;
 
   @media (max-width: 1280px) {
     grid-template-columns: 0.3fr 1.2fr 1fr;
   }
 
   @media (max-width: 1010px) {
-    grid-template-columns: 0.3fr 1fr auto;
+    grid-template-columns: 0.3fr 1fr 0.3fr;
   }
 
   @media (max-width: 500px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 0fr 1fr 12rem;
-
     grid-template-areas:
       "head"
       "main"

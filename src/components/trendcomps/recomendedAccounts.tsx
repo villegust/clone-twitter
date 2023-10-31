@@ -9,7 +9,7 @@ function RecomendedAccounts({ POST_DATA }: any) {
           <div className="account-content__box__title">
             <h2>Recomended accounts</h2>
           </div>
-          {POST_DATA.map((items: Data, index: number) => {
+          {POST_DATA.slice(0, 3).map((items: Data, index: number) => {
             return (
               <a key={index} href={items.username}>
                 <div className="account-content__box__account-box">

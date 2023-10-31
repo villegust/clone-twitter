@@ -40,6 +40,32 @@ export const POST_DATA: Data[] = [
         likes: 26000,
         views: 45000
     },
+    {
+        id: 4,
+        profilePic: "/images/profile/profile3.jpg",
+        username: "JoeMama123",
+        name: "Joe Mama",
+        posted: "1d",
+        postText: "some text for some content and some more stuff ",
+        postImg: "/images/testImage/andrew-tate-dance.gif",
+        comments: 7000,
+        reposts: 9000,
+        likes: 26000,
+        views: 45000
+    },
+    {
+        id: 5,
+        profilePic: "/images/profile/profile3.jpg",
+        username: "JoeMama123",
+        name: "Joe Mama",
+        posted: "1d",
+        postText: "some text for some content and some more stuff ",
+        postImg: "/images/testImage/andrew-tate-dance.gif",
+        comments: 7000,
+        reposts: 9000,
+        likes: 26000,
+        views: 45000
+    },
 ]
 
 export const TREND_DATA: Trends[] = [

@@ -1,11 +1,11 @@
 import React from "react";
 
-import { POST_DATA } from "../../../data";
-import { TREND_DATA } from "../../../data";
+import { POST_DATA } from "../../../../data";
+import { TREND_DATA } from "../../../../data";
 
 import Sidebar from "@/components/sidebar";
 import Search from "@/components/headercomps/search";
-import YourTrends from "@/components/explorecomps/yourTrends";
+import AllTrends from "@/components/i/trends";
 import Accounts from "@/components/trendcomps/recomendedAccounts";
 
 export default function Page() {
@@ -14,7 +14,7 @@ export default function Page() {
       <Sidebar />
       <Search name={"Explore"} />
       <div className="home">
-        <YourTrends TREND_DATA={TREND_DATA} />
+        <AllTrends TREND_DATA={TREND_DATA} />
       </div>
       <div className="trends">
         <Accounts POST_DATA={POST_DATA} />
