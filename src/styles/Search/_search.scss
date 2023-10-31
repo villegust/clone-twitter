@@ -2,6 +2,10 @@
 
 .search-section {
   @include RightsideWidth;
+
+  @media (max-width: 1010px) {
+    display: none;
+  }
 }
 
 .search-section-explore {

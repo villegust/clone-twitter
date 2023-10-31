@@ -11,7 +11,7 @@ export default function Notification({ name }: Notifications) {
 
   return (
     <div className="header__feeds">
-      <h1>{name}</h1>
+      <h1 id="noti-h1">{name}</h1>
       <div className="header__feeds__btn">
         <button
           className={avm === "All" ? "noti-active" : ""}

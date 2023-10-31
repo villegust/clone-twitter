@@ -8,4 +8,8 @@
 
 .trends {
   grid-area: trends;
+
+  @media (max-width: 1010px) {
+    display: none;
+  }
 }

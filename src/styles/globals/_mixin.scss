@@ -1,5 +1,9 @@
 @mixin RightsideWidth {
   width: 53%;
+
+  @media (max-width: 1280px) {
+    width: 80%;
+  }
 }
 
 @mixin RightsidePadding {

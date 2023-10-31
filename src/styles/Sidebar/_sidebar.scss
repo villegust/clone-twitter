@@ -6,9 +6,6 @@ nav {
 }
 .sidebar {
   grid-area: sidebar;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
   padding: 5px;
   position: fixed;
   top: 0;
@@ -18,6 +15,13 @@ nav {
   z-index: 100;
 
   .sidebar-menu {
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 1280px) {
+      align-items: flex-end;
+    }
+
     li {
       display: flex;
       justify-content: center;
@@ -25,8 +29,8 @@ nav {
       font-size: 2rem;
       font-weight: 300;
       width: fit-content;
-      padding: 16px;
-      margin-right: 6rem;
+      padding: 12px;
+      margin-right: 1rem;
       cursor: pointer;
       transition: background 0.2s;
       border-radius: 10rem;
@@ -35,6 +39,10 @@ nav {
 
       span {
         margin-left: 2rem;
+
+        @media (max-width: 1280px) {
+          display: none;
+        }
       }
 
       &:hover {
@@ -44,16 +52,20 @@ nav {
   }
   button {
     margin-top: 2rem;
+    margin-right: 1rem;
     justify-content: center;
     align-items: center;
     border: none;
-    width: 90%;
-    padding: 18px;
+    padding: 12px;
     border-radius: 10rem;
     background-color: $color-twitter;
     color: white;
     font-size: 1.6rem;
     font-weight: 600;
+
+    @media (max-width: 1280px) {
+      width: fit-content;
+    }
 
     &:hover {
       cursor: pointer;
@@ -82,6 +94,10 @@ nav {
           font-weight: 300;
           color: $text-grey;
         }
+
+        @media (max-width: 1280px) {
+          display: none;
+        }
       }
     }
 
@@ -98,5 +114,5 @@ nav {
 }
 
 .bold-link {
-  font-weight: 700;
+  font-weight: 600;
 }

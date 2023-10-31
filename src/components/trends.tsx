@@ -13,7 +13,7 @@ function Trends({ TREND_DATA }: any) {
           </div>
           {TREND_DATA.map((items: Trends, index: number) => {
             return (
-              <div className="trend-content__box__trend-box">
+              <div key={index} className="trend-content__box__trend-box">
                 <div className="trend-content__box__trend-box__top">
                   <p>{index + 1} · Trend</p>
                   <span>
