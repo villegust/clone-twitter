@@ -5,7 +5,7 @@ nav {
   justify-content: flex-end;
 }
 .sidebar {
-  padding: 5px;
+  width: 27.5rem;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -28,7 +28,7 @@ nav {
       font-size: 2rem;
       font-weight: 300;
       width: fit-content;
-      padding: 12px;
+      padding: 16px;
       margin-right: 1rem;
       cursor: pointer;
       transition: background 0.2s;
@@ -51,11 +51,12 @@ nav {
   }
   button {
     margin-top: 2rem;
+    width: 90%;
     margin-right: 1rem;
     justify-content: center;
     align-items: center;
     border: none;
-    padding: 12px;
+    padding: 16px;
     border-radius: 10rem;
     background-color: $color-twitter;
     color: white;
@@ -73,12 +74,16 @@ nav {
 
   .profile {
     position: absolute;
+    display: flex;
+    align-items: center;
     bottom: 2rem;
     padding: 8px 16px 8px 16px;
     border-radius: 10rem;
+    width: 95%;
 
     &__content {
       display: flex;
+      width: 100%;
 
       &__text {
         margin-left: 1rem;
@@ -113,5 +118,5 @@ nav {
 }
 
 .bold-link {
-  font-weight: 600;
+  font-weight: 900;
 }

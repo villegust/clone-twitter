@@ -4,6 +4,9 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
+
 import { useEffect, useState } from "react";
 
 import IsMobile from "./isMobile/isMobile";
@@ -42,6 +45,10 @@ const Sidebar: React.FC = () => {
     const storedSelectedLink = localStorage.getItem("selectedLink");
     if (storedSelectedLink) {
       setSelectedLink(storedSelectedLink);
+    } else {
+      // If the link doesn't exist or is invalid, you can clear the selected link
+      setSelectedLink("");
+      localStorage.removeItem("selectedLink");
     }
   }, []);
 
@@ -142,6 +149,18 @@ const Sidebar: React.FC = () => {
               </li>
             </Link>
 
+            <Link className="links" href="/groups">
+              <li onClick={() => handleLinkClick("/groups")}>
+                <Image
+                  src="/images/sidebar/groups.svg"
+                  alt="Logo"
+                  width={20}
+                  height={20}
+                />
+                <span>Groups</span>
+              </li>
+            </Link>
+
             <Link className="links" href="/premium">
               <li onClick={() => handleLinkClick("/premium")}>
                 <Image
@@ -200,9 +219,10 @@ const Sidebar: React.FC = () => {
                 />
                 <div className="profile__content__text">
                   <h6>Name</h6>
-                  <p>Username</p>
+                  <p>@Username</p>
                 </div>
               </div>
+              <FontAwesomeIcon icon={faEllipsis} size="xl" />
             </div>
           </ul>
         </div>

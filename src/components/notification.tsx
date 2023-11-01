@@ -2,6 +2,9 @@
 
 import React, { useState } from "react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGear } from "@fortawesome/free-solid-svg-icons";
+
 interface Notifications {
   name: string;
 }
@@ -11,7 +14,13 @@ export default function Notification({ name }: Notifications) {
 
   return (
     <div className="header__feeds">
-      <h1 id="noti-h1">{name}</h1>
+      <div className="title">
+        <h1 id="noti-h1">{name}</h1>
+        <div className="icon">
+          <FontAwesomeIcon icon={faGear} size="xl" />
+        </div>
+      </div>
+
       <div className="header__feeds__btn">
         <button
           className={avm === "All" ? "noti-active" : ""}

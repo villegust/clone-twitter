@@ -3,15 +3,29 @@
 import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEllipsis,
+  faArrowLeft,
+  faGear,
+} from "@fortawesome/free-solid-svg-icons";
 
 function AllTrends({ TREND_DATA }: any) {
+  const goBack = () => {
+    window.history.back();
+  };
+
   return (
     <section className="your-trend-section">
       <div className="your-trend-content">
         <div className="your-trend-content__box">
           <div className="your-trend-content__box__title">
+            <div className="icon" onClick={goBack}>
+              <FontAwesomeIcon icon={faArrowLeft} size="xl" />
+            </div>
             <h2>All trends</h2>
+            <div className="icon">
+              <FontAwesomeIcon icon={faGear} size="xl" />
+            </div>
           </div>
           {TREND_DATA.map((items: Trends, index: number) => {
             return (

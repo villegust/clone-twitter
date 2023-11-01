@@ -37,6 +37,16 @@ body {
   }
 }
 
+// classes and ids that are used in multiple components
+.icon {
+  padding: 1rem;
+  border-radius: 10rem;
+  &:hover {
+    background-color: $color-grey;
+    cursor: pointer;
+  }
+}
+
 /* Firefox */
 * {
   scrollbar-width: thin;

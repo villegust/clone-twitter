@@ -10,10 +10,14 @@
 
   &__box {
     &__title {
-      padding: 2rem 2rem 0 2rem;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      padding: 0rem 2rem 0 2rem;
       margin-bottom: 1rem;
 
       h2 {
+        width: 100%;
         font-size: 2rem;
       }
     }

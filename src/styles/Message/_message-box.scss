@@ -1,0 +1,49 @@
+@use "../globals" as *;
+
+//collapsed message-box
+
+.message-box {
+  position: fixed;
+  width: 40rem;
+  bottom: 0;
+  right: 4rem;
+  padding: 1.5rem;
+  background-color: $bg-black;
+  border: 2px solid $color-grey;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+  border-bottom: none;
+
+  &__content-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    &__icons {
+      span {
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+//expanded mesage-box
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+
+  .message-box-extended {
+    position: fixed;
+    width: 40rem;
+    height: 55rem;
+    bottom: 0;
+    right: 4rem;
+    padding: 1.5rem;
+    background-color: $bg-black;
+    border: 2px solid $color-grey;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+    border-bottom: none;
+  }
+}

@@ -13,7 +13,6 @@ export default function Page() {
     <main className="main">
       <Sidebar />
       <div className="home">
-        <Search name={"Explore"} />
         <AllTrends TREND_DATA={TREND_DATA} />
       </div>
       <div className="trends">
