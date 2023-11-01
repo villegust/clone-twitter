@@ -1,19 +1,22 @@
 @use "../globals" as *;
 
 .header {
-  grid-area: head;
   border-right: 1px solid #38444d;
   z-index: 100;
 
   &__feeds {
     display: flex;
+    min-width: 31%;
     position: fixed;
-    width: 31%;
     flex-direction: column;
     background-color: $bg-black;
 
     @media (max-width: 1280px) {
       width: 47.9%;
+    }
+
+    @media (max-width: 1010px) {
+      width: 62.3%;
     }
 
     @media (max-width: 500px) {
@@ -88,8 +91,6 @@
 }
 
 .search-header {
-  grid-area: searchheader;
-
   .search-container {
     position: fixed;
     background-color: $bg-black;

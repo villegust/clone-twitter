@@ -12,8 +12,8 @@ export default function Page() {
   return (
     <main className="main">
       <Sidebar />
-      <Search name={"Explore"} />
       <div className="home">
+        <Search name={"Explore"} />
         <YourTrends TREND_DATA={TREND_DATA} />
       </div>
       <div className="trends">

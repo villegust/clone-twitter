@@ -1,14 +1,7 @@
 .home {
-  grid-area: main;
-  display: flex;
-  flex-direction: column;
   border-right: 1px solid #38444d;
 }
 
 .trends {
-  grid-area: trends;
-
-  @media (max-width: 1010px) {
-    display: none;
-  }
+  height: 100vh;
 }

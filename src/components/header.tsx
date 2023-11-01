@@ -20,7 +20,7 @@ export default function Header({ name }: any) {
           <Notification name={name} />
         )}
       </div>
-      {!isMobile ? (
+      {/* {!isMobile ? (
         <div className="search-header">
           <div className="search-container">
             <Search />
@@ -28,7 +28,7 @@ export default function Header({ name }: any) {
         </div>
       ) : (
         ""
-      )}
+      )} */}
     </>
   );
 }

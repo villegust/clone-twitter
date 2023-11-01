@@ -19,8 +19,7 @@ body {
 .main {
   display: grid;
   grid-template-columns: 0.82fr 0.82fr 1fr;
-  grid-template-rows: 0fr 1fr 1fr;
-  grid-template-areas: "sidebar head searchheader" "sidebar main trends" "sidebar main trends";
+  grid-template-rows: auto;
 }
 @media (max-width: 1280px) {
   .main {
@@ -35,7 +34,6 @@ body {
 @media (max-width: 500px) {
   .main {
     grid-template-columns: 1fr;
-    grid-template-areas: "head" "main" "sidebar";
   }
 }
 
@@ -78,36 +76,32 @@ body {
 }
 
 .home {
-  grid-area: main;
-  display: flex;
-  flex-direction: column;
   border-right: 1px solid #38444d;
 }
 
 .trends {
-  grid-area: trends;
-}
-@media (max-width: 1010px) {
-  .trends {
-    display: none;
-  }
+  height: 100vh;
 }
 
 .header {
-  grid-area: head;
   border-right: 1px solid #38444d;
   z-index: 100;
 }
 .header__feeds {
   display: flex;
+  min-width: 31%;
   position: fixed;
-  width: 31%;
   flex-direction: column;
   background-color: #010103;
 }
 @media (max-width: 1280px) {
   .header__feeds {
     width: 47.9%;
+  }
+}
+@media (max-width: 1010px) {
+  .header__feeds {
+    width: 62.3%;
   }
 }
 @media (max-width: 500px) {
@@ -171,9 +165,6 @@ body {
   font-weight: 400;
 }
 
-.search-header {
-  grid-area: searchheader;
-}
 .search-header .search-container {
   position: fixed;
   background-color: #010103;
@@ -251,7 +242,6 @@ nav {
 }
 
 .sidebar {
-  grid-area: sidebar;
   padding: 5px;
   position: fixed;
   top: 0;
@@ -357,8 +347,9 @@ nav {
 }
 
 .mobile-navbar {
-  grid-area: sidebar;
+  position: fixed;
   bottom: 0;
+  right: 0;
   border-top: 1px solid #38444d;
   background-color: #010103;
   padding: 0.75rem;
