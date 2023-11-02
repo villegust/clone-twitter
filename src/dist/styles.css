@@ -888,9 +888,6 @@ nav {
   display: flex;
   justify-content: space-between;
 }
-.message-box__content-top__icons span {
-  padding: 1rem;
-}
 
 .message-container {
   display: flex;
@@ -900,14 +897,90 @@ nav {
   position: fixed;
   width: 40rem;
   height: 55rem;
+  padding: 1.5rem;
   bottom: 0;
   right: 4rem;
-  padding: 1.5rem;
   background-color: #010103;
   border: 2px solid rgba(248, 248, 248, 0.1529411765);
   border-top-right-radius: 2rem;
   border-top-left-radius: 2rem;
   border-bottom: none;
+}
+.message-container .message-box-extended .message-request {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+.message-container .message-box-extended .message-request:hover {
+  background-color: rgba(248, 248, 248, 0.1529411765);
+  cursor: pointer;
+}
+.message-container .message-box-extended .message-request:hover #message-icon {
+  background-color: #010103;
+}
+.message-container .message-box-extended .message-request p {
+  font-size: 1.4rem;
+}
+.message-container .message-box-extended .message-request__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.4rem;
+  border-radius: 10rem;
+  border: 1px solid rgba(248, 248, 248, 0.1529411765);
+}
+.message-container .message-box-extended .write-message {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+.message-container .message-box-extended .write-message h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+.message-container .message-box-extended .write-message p {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  color: #7e7e7e;
+}
+.message-container .message-box-extended .write-message__btn {
+  padding: 2rem;
+}
+.message-container .message-box-extended .write-message__btn button {
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 16px;
+  border-radius: 10rem;
+  background-color: #1b95e0;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.message-container .message-box-extended .write-message__btn button:hover {
+  cursor: pointer;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
 /*# sourceMappingURL=styles.css.map */

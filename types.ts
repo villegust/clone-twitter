@@ -16,3 +16,8 @@ interface Trends {
     name: string,
     totalPosts: number,
 }
+
+interface ModalProps {
+    modalOpen: boolean;
+    setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  }

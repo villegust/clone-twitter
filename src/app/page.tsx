@@ -15,6 +15,8 @@ import Subscribe from "@/components/trendcomps/subscribe";
 import Accounts from "@/components/trendcomps/recomendedAccounts";
 import Trends from "@/components/trends";
 
+import MessageBox from "@/components/messagecomps/message-box";
+
 export default function Page() {
   return (
     <main className="main">
@@ -34,6 +36,8 @@ export default function Page() {
         <Trends TREND_DATA={TREND_DATA} />
         <Accounts POST_DATA={POST_DATA} />
       </div>
+
+      <MessageBox />
     </main>
   );
 }
