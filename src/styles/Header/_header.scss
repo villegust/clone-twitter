@@ -1,109 +1,131 @@
 @use "../globals" as *;
 
 .header {
-  border-right: 1px solid #38444d;
-  z-index: 100;
+  border-bottom: 1px solid #38444d;
+  padding: 2rem;
+  position: fixed;
+  width: 30.9%;
+  display: flex;
+  flex-direction: column;
+  background-color: $bg-black;
 
-  &__feeds {
+  &__text {
     display: flex;
-    min-width: 31%;
-    position: fixed;
-    flex-direction: column;
-    background-color: $bg-black;
-
-    .title {
-      display: flex;
-      align-items: center;
-    }
-
-    @media (max-width: 1280px) {
-      width: 47.9%;
-    }
-
-    @media (max-width: 1010px) {
-      width: 62.3%;
-    }
-
-    @media (max-width: 500px) {
-      width: 100%;
-    }
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
 
     h1 {
-      font-size: 1.8rem;
-    }
-
-    #noti-h1 {
-      margin: 2rem;
-      width: 85%;
-    }
-
-    &__btn {
-      display: inherit;
-      justify-content: space-around;
-      position: relative;
-      border-bottom: 1px solid #38444d;
-
-      button {
-        background-color: $bg-black;
-        border: none;
-        color: white;
-        width: 50%;
-        padding: 2rem;
-        font-weight: 600;
-        font-size: 1.4rem;
-
-        &:hover {
-          background-color: $color-grey;
-          cursor: pointer;
-        }
-      }
-    }
-  }
-
-  .active {
-    position: relative;
-
-    &::after {
-      content: "";
-      position: absolute;
-      width: 5rem;
-      height: 3px;
-      background: $color-twitter;
-      bottom: 0;
-      left: 0;
-      transform: translate(250%, 50%);
-    }
-  }
-
-  .noti-active {
-    position: relative;
-
-    &::after {
-      content: "";
-      position: absolute;
-      width: 5rem;
-      height: 3px;
-      background: $color-twitter;
-      bottom: 0;
-      left: 0;
-      transform: translate(150%, 50%);
-    }
-  }
-
-  .inactive {
-    color: $text-grey;
-    font-weight: 400;
-  }
-}
-
-.search-header {
-  .search-container {
-    position: fixed;
-    background-color: $bg-black;
-    width: 38%;
-
-    @media (max-width: 1280px) {
-      width: 40%;
+      font-size: 2rem;
+      line-height: 1.75rem;
+      font-weight: 600;
     }
   }
 }
+// .header {
+//   border-right: 1px solid #38444d;
+//   z-index: 100;
+
+//   &__feeds {
+//     display: flex;
+//     min-width: 31%;
+//     position: fixed;
+//     flex-direction: column;
+//     background-color: $bg-black;
+
+//     .title {
+//       display: flex;
+//       align-items: center;
+//     }
+
+//     @media (max-width: 1280px) {
+//       width: 47.9%;
+//     }
+
+//     @media (max-width: 1010px) {
+//       width: 62.3%;
+//     }
+
+//     @media (max-width: 500px) {
+//       width: 100%;
+//     }
+
+//     h1 {
+//       font-size: 1.8rem;
+//     }
+
+//     #noti-h1 {
+//       margin: 2rem;
+//       width: 85%;
+//     }
+
+//     &__btn {
+//       display: inherit;
+//       justify-content: space-around;
+//       position: relative;
+//       border-bottom: 1px solid #38444d;
+
+//       button {
+//         background-color: $bg-black;
+//         border: none;
+//         color: white;
+//         width: 50%;
+//         padding: 2rem;
+//         font-weight: 600;
+//         font-size: 1.4rem;
+
+//         &:hover {
+//           background-color: $color-grey;
+//           cursor: pointer;
+//         }
+//       }
+//     }
+//   }
+
+//   .active {
+//     position: relative;
+
+//     &::after {
+//       content: "";
+//       position: absolute;
+//       width: 5rem;
+//       height: 3px;
+//       background: $color-twitter;
+//       bottom: 0;
+//       left: 0;
+//       transform: translate(250%, 50%);
+//     }
+//   }
+
+//   .noti-active {
+//     position: relative;
+
+//     &::after {
+//       content: "";
+//       position: absolute;
+//       width: 5rem;
+//       height: 3px;
+//       background: $color-twitter;
+//       bottom: 0;
+//       left: 0;
+//       transform: translate(150%, 50%);
+//     }
+//   }
+
+//   .inactive {
+//     color: $text-grey;
+//     font-weight: 400;
+//   }
+// }
+
+// .search-header {
+//   .search-container {
+//     position: fixed;
+//     background-color: $bg-black;
+//     width: 38%;
+
+//     @media (max-width: 1280px) {
+//       width: 40%;
+//     }
+//   }
+// }

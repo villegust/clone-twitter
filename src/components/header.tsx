@@ -1,34 +1,34 @@
-"use client";
+import { useRouter } from "next/router";
+import { useCallback } from "react";
+import { BiArrowBack } from "react-icons/bi";
 
-import React, { useState } from "react";
+interface HeaderProps {
+  showBackArrow?: boolean;
+  label: string;
+}
 
-import Search from "./headercomps/search";
-import FyOrFollow from "./headercomps/fyOrFollow";
-import Notification from "./notification";
+const Header: React.FC<HeaderProps> = ({ showBackArrow, label }) => {
+  const router = useRouter();
 
-import IsMobile from "./isMobile/isMobile";
-
-export default function Header({ name }: any) {
-  const isMobile: boolean = IsMobile();
+  const handleBack = useCallback(() => {
+    router.back();
+  }, [router]);
 
   return (
-    <>
-      <div className="header">
-        {name === "" ? (
-          <FyOrFollow name={name} />
-        ) : (
-          <Notification name={name} />
+    <div className="header">
+      <div className="header__text">
+        {showBackArrow && (
+          <BiArrowBack
+            onClick={handleBack}
+            color="white"
+            size={20}
+            className="back-arrow"
+          />
         )}
+        <h1>{label}</h1>
       </div>
-      {/* {!isMobile ? (
-        <div className="search-header">
-          <div className="search-container">
-            <Search />
-          </div>
-        </div>
-      ) : (
-        ""
-      )} */}
-    </>
+    </div>
   );
-}
+};
+
+export default Header;

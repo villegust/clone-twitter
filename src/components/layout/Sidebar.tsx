@@ -9,12 +9,10 @@ import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 
 import { useEffect, useState } from "react";
 
-import IsMobile from "./isMobile/isMobile";
+import IsMobile from "../isMobile/isMobile";
 
 const Sidebar: React.FC = () => {
   const isMobile: boolean = IsMobile();
-
-  const [selectedLink, setSelectedLink] = useState<string | null>(null);
 
   const [is1280px, setis1280px] = useState<boolean>(false);
 
@@ -35,23 +33,6 @@ const Sidebar: React.FC = () => {
     };
   }, []);
 
-  const handleLinkClick = (linkId: string) => {
-    setSelectedLink(linkId);
-    localStorage.setItem("selectedLink", linkId);
-  };
-
-  useEffect(() => {
-    // Retrieve the selected link from local storage when the component mounts
-    const storedSelectedLink = localStorage.getItem("selectedLink");
-    if (storedSelectedLink) {
-      setSelectedLink(storedSelectedLink);
-    } else {
-      // If the link doesn't exist or is invalid, you can clear the selected link
-      setSelectedLink("");
-      localStorage.removeItem("selectedLink");
-    }
-  }, []);
-
   return (
     <nav>
       {!isMobile ? (
@@ -66,55 +47,43 @@ const Sidebar: React.FC = () => {
               />
             </li>
             <Link className="links" href="/">
-              <li onClick={() => handleLinkClick("/")}>
+              <li>
                 <Image
                   src="/images/sidebar/home.svg"
                   alt="Logo"
                   width={25}
                   height={25}
                 />
-                <span className={selectedLink === "/" ? "bold-link" : ""}>
-                  Home
-                </span>
+                <span>Home</span>
               </li>
             </Link>
 
             <Link className="links" href="/explore">
-              <li onClick={() => handleLinkClick("/explore")}>
+              <li>
                 <Image
                   src="/images/sidebar/search.svg"
                   alt="Explore"
                   width={25}
                   height={25}
                 />
-                <span
-                  className={selectedLink === "/explore" ? "bold-link" : ""}
-                >
-                  Explore
-                </span>
+                <span>Explore</span>
               </li>
             </Link>
 
             <Link className="links" href="/notifications">
-              <li onClick={() => handleLinkClick("/notifications")}>
+              <li>
                 <Image
                   src="/images/sidebar/bell.svg"
                   alt="Notifications"
                   width={25}
                   height={25}
                 />
-                <span
-                  className={
-                    selectedLink === "/notifications" ? "bold-link" : ""
-                  }
-                >
-                  Notifications
-                </span>
+                <span>Notifications</span>
               </li>
             </Link>
 
             <Link className="links" href="/message">
-              <li onClick={() => handleLinkClick("/message")}>
+              <li>
                 <Image
                   src="/images/sidebar/message.svg"
                   alt="Notifications"
@@ -126,7 +95,7 @@ const Sidebar: React.FC = () => {
             </Link>
 
             <Link className="links" href="/lists">
-              <li onClick={() => handleLinkClick("/lists")}>
+              <li>
                 <Image
                   src="/images/sidebar/list.svg"
                   alt="Notifications"
@@ -138,7 +107,7 @@ const Sidebar: React.FC = () => {
             </Link>
 
             <Link className="links" href="/bookmarks">
-              <li onClick={() => handleLinkClick("/bookmarks")}>
+              <li>
                 <Image
                   src="/images/sidebar/bookmark.svg"
                   alt="Notifications"
@@ -150,7 +119,7 @@ const Sidebar: React.FC = () => {
             </Link>
 
             <Link className="links" href="/groups">
-              <li onClick={() => handleLinkClick("/groups")}>
+              <li>
                 <Image
                   src="/images/sidebar/groups.svg"
                   alt="Logo"
@@ -162,7 +131,7 @@ const Sidebar: React.FC = () => {
             </Link>
 
             <Link className="links" href="/premium">
-              <li onClick={() => handleLinkClick("/premium")}>
+              <li>
                 <Image
                   src="/images/sidebar/logo.svg"
                   alt="Logo"
@@ -174,7 +143,7 @@ const Sidebar: React.FC = () => {
             </Link>
 
             <Link className="links" href="/profile">
-              <li onClick={() => handleLinkClick("/profile")}>
+              <li>
                 <Image
                   src="/images/sidebar/profile.svg"
                   alt="Logo"
@@ -186,7 +155,7 @@ const Sidebar: React.FC = () => {
             </Link>
 
             <Link className="links" href="/more">
-              <li onClick={() => handleLinkClick("/more")}>
+              <li>
                 <Image
                   src="/images/sidebar/more.svg"
                   alt="Logo"
@@ -231,7 +200,7 @@ const Sidebar: React.FC = () => {
           <div className="mobile-navbar-menu">
             <div className="mobile-navbar-menu__icons">
               <Link className="mobile-navbar-menu__icons" href="/">
-                <div onClick={() => handleLinkClick("/")}>
+                <div>
                   <Image
                     src="/images/sidebar/home.svg"
                     alt="Logo"
@@ -244,7 +213,7 @@ const Sidebar: React.FC = () => {
 
             <div className="mobile-navbar-menu__icons">
               <Link href="/explore">
-                <div onClick={() => handleLinkClick("/explore")}>
+                <div>
                   <Image
                     src="/images/sidebar/search.svg"
                     alt="Logo"
@@ -256,7 +225,7 @@ const Sidebar: React.FC = () => {
             </div>
             <div className="mobile-navbar-menu__icons">
               <Link className="mobile-navbar-menu__icons" href="/notifications">
-                <div onClick={() => handleLinkClick("/notifications")}>
+                <div>
                   <Image
                     src="/images/sidebar/bell.svg"
                     alt="Logo"
@@ -269,7 +238,7 @@ const Sidebar: React.FC = () => {
 
             <div className="mobile-navbar-menu__icons">
               <Link className="mobile-navbar-menu__icons" href="/message">
-                <div onClick={() => handleLinkClick("/message")}>
+                <div>
                   <Image
                     src="/images/sidebar/message.svg"
                     alt="Logo"

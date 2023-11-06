@@ -2,18 +2,18 @@
 
 import React, { useState, useEffect } from "react";
 
-import { POST_DATA } from "../../data";
-import { TREND_DATA } from "../../data";
+import { POST_DATA } from "../../../data";
+import { TREND_DATA } from "../../../data";
 
-import Sidebar from "@/components/sidebar";
-import Header from "@/components/header";
+import Sidebar from "@/components/layout/Sidebar";
+import Header from "@/components/oldHeader";
 import NewPost from "@/components/newPost";
 import Post from "@/components/post";
 
 import Search from "@/components/headercomps/search";
 import Subscribe from "@/components/trendcomps/subscribe";
 import Accounts from "@/components/trendcomps/recomendedAccounts";
-import Trends from "@/components/trends";
+import Trends from "@/components/trendcomps/trends";
 
 import MessageBox from "@/components/messagecomps/message-box";
 

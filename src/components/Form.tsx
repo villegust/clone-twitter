@@ -4,7 +4,11 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 
-const NewPost = () => {
+interface FormProps {
+  placeholder: string;
+}
+
+const Form: React.FC<FormProps> = ({ placeholder }) => {
   const [imagePreview, setImagePreview] = useState<string | null>(null);
 
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -24,7 +28,6 @@ const NewPost = () => {
       setImagePreview(null);
     }
   };
-
   return (
     <section className="newpost-section">
       <div className="newpost-content">
@@ -36,7 +39,7 @@ const NewPost = () => {
               width={40}
               height={35}
             />
-            <textarea name="" id="" placeholder="What's happening?"></textarea>
+            <textarea name="" id="" placeholder={placeholder}></textarea>
           </div>
           {imagePreview && (
             <div className="newpost-content__profileAndInput__image-preview">
@@ -135,4 +138,4 @@ const NewPost = () => {
   );
 };
 
-export default NewPost;
+export default Form;

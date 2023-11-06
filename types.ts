@@ -21,3 +21,12 @@ interface ModalProps {
     modalOpen: boolean;
     setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   }
+
+//   interface SidebarItemProps {
+//     label: string;
+//     icon: IconType;
+//     href?: string;
+//     onClick?: () => void;
+//     auth?: boolean;
+//     alert?: boolean;
+//   }

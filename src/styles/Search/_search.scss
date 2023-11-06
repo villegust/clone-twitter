@@ -11,10 +11,6 @@
 .search-section-explore {
   border-right: 1px solid #38444d;
 
-  @media (max-width: 500px) {
-    grid-area: head;
-  }
-
   .explore {
     width: 90%;
   }

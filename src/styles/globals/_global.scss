@@ -13,29 +13,65 @@ html {
 }
 
 body {
-  background-color: $bg-black;
   color: $text-white;
   font-family: $titles-font;
-  position: relative;
+  background-color: $bg-black;
 }
 
 .main {
-  display: grid;
-  grid-template-columns: 0.82fr 0.82fr 1fr;
-  grid-template-rows: auto;
+  height: 100vh;
 
-  @media (max-width: 1280px) {
-    grid-template-columns: 0.3fr 1.2fr 1fr;
-  }
+  .grid-layout {
+    display: grid;
+    grid-template-columns: 0.82fr 0.82fr 1fr;
+    grid-template-rows: auto;
 
-  @media (max-width: 1010px) {
-    grid-template-columns: 0.3fr 1fr 0.3fr;
-  }
+    @media (max-width: 1280px) {
+      grid-template-columns: 0.3fr 1.2fr 1fr;
+    }
 
-  @media (max-width: 500px) {
-    grid-template-columns: 1fr;
+    @media (max-width: 1010px) {
+      grid-template-columns: 0.3fr 1fr 0.3fr;
+    }
+
+    @media (max-width: 500px) {
+      grid-template-columns: 1fr;
+    }
+    height: 100%;
+
+    &__borders {
+      border-right: 1px solid #38444d;
+      border-left: 1px solid #38444d;
+    }
   }
 }
+
+.back-arrow {
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  cursor: pointer;
+
+  :hover {
+    opacity: 0.7;
+  }
+}
+// display: grid;
+// grid-template-columns: 0.82fr 0.82fr 1fr;
+// grid-template-rows: auto;
+
+// @media (max-width: 1280px) {
+//   grid-template-columns: 0.3fr 1.2fr 1fr;
+// }
+
+// @media (max-width: 1010px) {
+//   grid-template-columns: 0.3fr 1fr 0.3fr;
+// }
+
+// @media (max-width: 500px) {
+//   grid-template-columns: 1fr;
+// }
 
 // classes and ids that are used in multiple components
 .icon {
