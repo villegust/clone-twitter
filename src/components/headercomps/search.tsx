@@ -1,14 +1,12 @@
-"use client";
-
 import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-const Search = ({ name }: any) => {
+const Search = ({ label }: any) => {
   return (
     <>
-      {name === "Explore" ? (
+      {label === "Explore" ? (
         <section className="search-section-explore">
           <div className="explore">
             <div className="search-content">
@@ -22,16 +20,20 @@ const Search = ({ name }: any) => {
           </div>
         </section>
       ) : (
-        <section className="search-section">
-          <div className="search-content">
-            <div className="search-bar">
-              <div className="search-icon">
-                <FontAwesomeIcon icon={faMagnifyingGlass} size="xl" />
+        <div className="search-header">
+          <div className="search-container">
+            <section className="search-section">
+              <div className="search-content">
+                <div className="search-bar">
+                  <div className="search-icon">
+                    <FontAwesomeIcon icon={faMagnifyingGlass} size="xl" />
+                  </div>
+                  <input type="text" placeholder="Search..." />
+                </div>
               </div>
-              <input type="text" placeholder="Search..." />
-            </div>
+            </section>
           </div>
-        </section>
+        </div>
       )}
     </>
   );

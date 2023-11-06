@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 
 import IsMobile from "../isMobile/isMobile";
 
-const Sidebar: React.FC = () => {
+const Sidebar = ({ setPageName }: any) => {
   const isMobile: boolean = IsMobile();
 
   const [is1280px, setis1280px] = useState<boolean>(false);
@@ -47,7 +47,11 @@ const Sidebar: React.FC = () => {
               />
             </li>
             <Link className="links" href="/">
-              <li>
+              <li
+                onClick={() => {
+                  setPageName("");
+                }}
+              >
                 <Image
                   src="/images/sidebar/home.svg"
                   alt="Logo"
@@ -59,7 +63,11 @@ const Sidebar: React.FC = () => {
             </Link>
 
             <Link className="links" href="/explore">
-              <li>
+              <li
+                onClick={() => {
+                  setPageName("explore");
+                }}
+              >
                 <Image
                   src="/images/sidebar/search.svg"
                   alt="Explore"
@@ -71,7 +79,11 @@ const Sidebar: React.FC = () => {
             </Link>
 
             <Link className="links" href="/notifications">
-              <li>
+              <li
+                onClick={() => {
+                  setPageName("notifications");
+                }}
+              >
                 <Image
                   src="/images/sidebar/bell.svg"
                   alt="Notifications"

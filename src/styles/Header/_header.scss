@@ -118,14 +118,16 @@
 //   }
 // }
 
-// .search-header {
-//   .search-container {
-//     position: fixed;
-//     background-color: $bg-black;
-//     width: 38%;
+.search-header {
+  margin-bottom: 6rem;
+  .search-container {
+    padding-bottom: 1rem;
+    position: fixed;
+    background-color: $bg-black;
+    width: 38%;
 
-//     @media (max-width: 1280px) {
-//       width: 40%;
-//     }
-//   }
-// }
+    @media (max-width: 1280px) {
+      width: 40%;
+    }
+  }
+}
