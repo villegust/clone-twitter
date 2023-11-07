@@ -8,7 +8,7 @@ export const POST_DATA: Data[] = [
         name: "Name 1",
         posted: "14h",
         postText: "some text for some content",
-        postImg: "/images/testImage/theTruth.jpg",
+        postImg: "/images/testImage/test1.jpg",
         comments: 1000000,
         reposts: 30000,
         likes: 100000,
@@ -21,7 +21,7 @@ export const POST_DATA: Data[] = [
         name: "Name 2",
         posted: "18h",
         postText: "some text for some content and some more stuff ",
-        postImg: "/images/testImage/raw.png",
+        postImg: "/images/testImage/test2.png",
         comments: 7000,
         reposts: 9000,
         likes: 26000,
@@ -34,38 +34,13 @@ export const POST_DATA: Data[] = [
         name: "Joe Mama",
         posted: "1d",
         postText: "some text for some content and some more stuff ",
-        postImg: "/images/testImage/andrew-tate-dance.gif",
+        postImg: "/images/testImage/test3.gif",
         comments: 7000,
         reposts: 9000,
         likes: 26000,
         views: 45000
     },
-    {
-        id: 4,
-        profilePic: "/images/profile/profile3.jpg",
-        username: "JoeMama123",
-        name: "Joe Mama",
-        posted: "1d",
-        postText: "some text for some content and some more stuff ",
-        postImg: "/images/testImage/andrew-tate-dance.gif",
-        comments: 7000,
-        reposts: 9000,
-        likes: 26000,
-        views: 45000
-    },
-    {
-        id: 5,
-        profilePic: "/images/profile/profile3.jpg",
-        username: "JoeMama123",
-        name: "Joe Mama",
-        posted: "1d",
-        postText: "some text for some content and some more stuff ",
-        postImg: "/images/testImage/andrew-tate-dance.gif",
-        comments: 7000,
-        reposts: 9000,
-        likes: 26000,
-        views: 45000
-    },
+
 ]
 
 export const TREND_DATA: Trends[] = [
