@@ -4,10 +4,6 @@ import Head from "next/head";
 import { POST_DATA } from "../../data";
 import { TREND_DATA } from "../../data";
 
-import Sidebar from "@/components/layout/Sidebar";
-import Search from "@/components/headercomps/search";
-import Accounts from "@/components/trendcomps/recomendedAccounts";
-
 import Header from "@/components/Header";
 import YourTrends from "@/components/explorecomps/yourTrends";
 
