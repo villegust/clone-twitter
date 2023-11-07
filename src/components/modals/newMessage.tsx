@@ -1,6 +1,11 @@
-"use client";
-
 import React, { useEffect } from "react";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faX,
+  faMagnifyingGlass,
+  faUsers,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Modal: React.FC<ModalProps> = ({ modalOpen, setModalOpen }) => {
   useEffect(() => {
@@ -19,14 +24,31 @@ const Modal: React.FC<ModalProps> = ({ modalOpen, setModalOpen }) => {
   return (
     <div className="modalOverlay">
       <div className="modal">
-        <button
-          className="closeButton"
-          onClick={() => {
-            setModalOpen((prevModalOpen) => !prevModalOpen);
-          }}
-        >
-          X
-        </button>
+        <div className="modal__header">
+          <h2>New message</h2>
+          <div
+            className="closeButton"
+            onClick={() => {
+              setModalOpen((prevModalOpen) => !prevModalOpen);
+            }}
+          >
+            <FontAwesomeIcon icon={faX} size="xl" />
+          </div>
+        </div>
+        <div className="search-bar1">
+          <div className="search-icon1">
+            <FontAwesomeIcon icon={faMagnifyingGlass} size="xl" />
+          </div>
+          <input type="text" placeholder="Find people" />
+        </div>
+        <div className="create-group">
+          <div className="create-group__icon">
+            <FontAwesomeIcon icon={faUsers} size="xl" />
+          </div>
+          <div className="create-group__text">
+            <p>Create a group</p>
+          </div>
+        </div>
       </div>
     </div>
   );

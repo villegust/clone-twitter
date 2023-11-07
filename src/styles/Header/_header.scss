@@ -21,6 +21,18 @@
       font-weight: 600;
     }
   }
+
+  @media (max-width: 1280px) {
+    width: 47.9%;
+  }
+
+  @media (max-width: 1010px) {
+    width: 62.3%;
+  }
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 }
 // .header {
 //   border-right: 1px solid #38444d;
@@ -120,9 +132,10 @@
 
 .search-header {
   margin-bottom: 6rem;
+  z-index: -1;
   .search-container {
-    padding-bottom: 1rem;
     position: fixed;
+    padding-bottom: 1rem;
     background-color: $bg-black;
     width: 38%;
 

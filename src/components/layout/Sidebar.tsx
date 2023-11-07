@@ -189,22 +189,34 @@ const Sidebar = ({ setPageName }: any) => {
                 />
               </button>
             )}
-
-            <div className="profile">
-              <div className="profile__content">
-                <Image
-                  src="/images/sidebar/profile.png"
-                  alt="Logo"
-                  width={40}
-                  height={35}
-                />
-                <div className="profile__content__text">
-                  <h6>Name</h6>
-                  <p>@Username</p>
+            {is1280px ? (
+              <div className="profile">
+                <div className="profile__content">
+                  <Image
+                    src="/images/sidebar/profile.png"
+                    alt="Logo"
+                    width={40}
+                    height={35}
+                  />
                 </div>
               </div>
-              <FontAwesomeIcon icon={faEllipsis} size="xl" />
-            </div>
+            ) : (
+              <div className="profile">
+                <div className="profile__content">
+                  <Image
+                    src="/images/sidebar/profile.png"
+                    alt="Logo"
+                    width={40}
+                    height={35}
+                  />
+                  <div className="profile__content__text">
+                    <h6>Name</h6>
+                    <p>@Username</p>
+                  </div>
+                </div>
+                <FontAwesomeIcon icon={faEllipsis} size="xl" />
+              </div>
+            )}
           </ul>
         </div>
       ) : (
