@@ -831,7 +831,6 @@ nav {
   width: 40rem;
   bottom: 0;
   right: 4rem;
-  padding: 1.5rem;
   background-color: #010103;
   border: 2px solid rgba(248, 248, 248, 0.1529411765);
   border-top-right-radius: 2rem;
@@ -842,6 +841,16 @@ nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.message-box__content-top__title {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.message-box__content-top__title span:hover {
+  cursor: pointer;
 }
 
 .message-container {
@@ -852,7 +861,6 @@ nav {
   position: fixed;
   width: 40rem;
   height: 55rem;
-  padding: 1.5rem;
   bottom: 0;
   right: 4rem;
   background-color: #010103;
@@ -882,8 +890,8 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.4rem;
   border-radius: 10rem;
+  padding: 1.4rem;
   border: 1px solid rgba(248, 248, 248, 0.1529411765);
 }
 .message-container .message-box-extended .write-message {
@@ -943,22 +951,59 @@ nav {
 }
 .modal__header {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: space-between;
 }
 .modal__header h2 {
-  margin-top: 2rem;
   font-size: 2.2rem;
 }
-.modal__header .closeButton {
+.modal__header__title {
+  margin: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.modal__header__title .closeButton {
   padding: 1rem;
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
   border-radius: 10rem;
 }
-.modal__header .closeButton:hover {
+.modal__header__title .closeButton:hover {
   background-color: rgba(248, 248, 248, 0.1529411765);
+  cursor: pointer;
+}
+.modal__header__btn {
+  margin-top: 2rem;
+  margin-right: 1rem;
+}
+.modal__header__btn .notActiveNextBtn {
+  border: none;
+  padding: 8px;
+  border-radius: 10rem;
+  background-color: #7e7e7e;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 600;
+  pointer-events: none;
+}
+@media (max-width: 1280px) {
+  .modal__header__btn .notActiveNextBtn {
+    width: fit-content;
+  }
+}
+.modal__header__btn .activeNextBtn {
+  border: none;
+  padding: 8px;
+  border-radius: 10rem;
+  background-color: #fff;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+@media (max-width: 1280px) {
+  .modal__header__btn .activeNextBtn {
+    width: fit-content;
+  }
+}
+.modal__header__btn .activeNextBtn:hover {
   cursor: pointer;
 }
 .modal .search-bar1 {
@@ -966,7 +1011,6 @@ nav {
   align-items: center;
   position: relative;
   border-bottom: 1px solid rgba(248, 248, 248, 0.1529411765);
-  margin-top: 3rem;
 }
 .modal .search-bar1 .search-icon1 {
   display: flex;
@@ -1013,6 +1057,80 @@ nav {
 .modal .create-group:hover {
   cursor: pointer;
   background-color: rgba(39, 55, 70, 0.6784313725);
+}
+
+.message-content {
+  position: fixed;
+  bottom: 5px;
+  width: 20.7%;
+  border-top: 1px solid rgba(248, 248, 248, 0.1529411765);
+}
+.message-content__test {
+  display: flex;
+  justify-content: center;
+}
+.message-content__test__image-preview {
+  margin-top: 1rem;
+  position: relative;
+  width: 80%;
+}
+.message-content__test__image-preview img {
+  width: 100%;
+  height: auto;
+  border-radius: 3rem;
+}
+.message-content__test__image-preview button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6784313725);
+}
+.message-content__test__image-preview button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.4784313725);
+}
+.message-content .message-bar {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.message-content .message-bar .message-icon {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  gap: 1rem;
+  left: 20px;
+  color: #a79e9e;
+  height: 100%;
+  z-index: 1;
+}
+.message-content .message-bar .message-icon #messageImageUpload {
+  display: none;
+}
+.message-content .message-bar .message-icon i:hover {
+  cursor: pointer;
+}
+.message-content .message-bar input {
+  border-radius: 10rem;
+  padding: 1.3rem;
+  width: 100%;
+  background-color: #1b1e20;
+  color: #a79e9e;
+  border: none;
+  font-size: 1.5rem;
+  outline: none;
+  padding-left: 10rem;
+}
+.message-content .message-bar input:focus {
+  background-color: #010103;
+  border: 1px solid #1b95e0;
 }
 
 /*# sourceMappingURL=styles.css.map */

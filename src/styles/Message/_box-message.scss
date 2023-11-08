@@ -1,0 +1,88 @@
+@use "../globals" as *;
+
+.message-content {
+  position: fixed;
+  bottom: 5px;
+  width: 20.7%;
+  border-top: 1px solid $color-grey;
+
+  &__test {
+    display: flex;
+    justify-content: center;
+
+    &__image-preview {
+      margin-top: 1rem;
+      position: relative;
+      width: 80%;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 3rem;
+      }
+
+      button {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        border: none;
+        color: white;
+        background-color: $color-dark-transparant;
+
+        &:hover {
+          cursor: pointer;
+          background-color: #0000007a;
+        }
+      }
+    }
+  }
+
+  .message-bar {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    .message-icon {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      gap: 1rem;
+      left: 20px; // Adjust the position as needed
+      color: $text-search;
+      height: 100%;
+      z-index: 1;
+
+      #messageImageUpload {
+        display: none;
+      }
+
+      i {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    input {
+      border-radius: 10rem;
+      padding: 1.3rem;
+      width: 100%;
+      background-color: $color-search;
+      color: $text-search;
+      border: none;
+      font-size: 1.5rem;
+      outline: none;
+      padding-left: 10rem; // Ensure input text doesn't overlap the icon
+
+      &:focus {
+        background-color: $bg-black;
+        border: 1px solid $color-twitter;
+      }
+    }
+  }
+}

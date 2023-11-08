@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -7,7 +7,14 @@ import {
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Modal: React.FC<ModalProps> = ({ modalOpen, setModalOpen }) => {
+const Modal: React.FC<ModalProps> = ({
+  modalOpen,
+  setExpanded,
+  setModalOpen,
+  setMessageUser,
+}) => {
+  const [selectedUser, setSelectedUser] = useState("");
+
   useEffect(() => {
     if (modalOpen) {
       document.body.style.overflow = "hidden"; // Prevent scrolling when the modal is open
@@ -21,25 +28,48 @@ const Modal: React.FC<ModalProps> = ({ modalOpen, setModalOpen }) => {
 
   if (!modalOpen) return null;
 
+  const handleNextBtn = () => {
+    setMessageUser(selectedUser);
+    setExpanded(true);
+    setModalOpen(false);
+  };
+
   return (
     <div className="modalOverlay">
       <div className="modal">
         <div className="modal__header">
-          <h2>New message</h2>
-          <div
-            className="closeButton"
-            onClick={() => {
-              setModalOpen((prevModalOpen) => !prevModalOpen);
-            }}
-          >
-            <FontAwesomeIcon icon={faX} size="xl" />
+          <div className="modal__header__title">
+            <div
+              className="closeButton"
+              onClick={() => {
+                setModalOpen((prevModalOpen) => !prevModalOpen);
+              }}
+            >
+              <FontAwesomeIcon icon={faX} size="xl" />
+            </div>
+            <h2>New message</h2>
+          </div>
+          <div className="modal__header__btn">
+            <button
+              className={!selectedUser ? "notActiveNextBtn" : "activeNextBtn"}
+              onClick={handleNextBtn}
+            >
+              Next
+            </button>
           </div>
         </div>
         <div className="search-bar1">
           <div className="search-icon1">
             <FontAwesomeIcon icon={faMagnifyingGlass} size="xl" />
           </div>
-          <input type="text" placeholder="Find people" />
+          <input
+            value={selectedUser}
+            type="text"
+            placeholder="Find people"
+            onChange={(e) => {
+              setSelectedUser(e.target.value);
+            }}
+          />
         </div>
         <div className="create-group">
           <div className="create-group__icon">

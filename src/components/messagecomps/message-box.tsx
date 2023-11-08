@@ -1,17 +1,22 @@
-"use client";
-
 import React, { useState } from "react";
 import Link from "next/link";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAnglesUp, faAnglesDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAnglesUp,
+  faAnglesDown,
+  faArrowLeft,
+} from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
 import NewMessage from "@/components/modals/newMessage";
+import Message from "@/components/messagecomps/message";
 
 const MessageBox = () => {
   const [expanded, setExpanded] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+
+  const [messageUser, setMessageUser] = useState("");
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -21,6 +26,10 @@ const MessageBox = () => {
     setModalOpen(!modalOpen);
   };
 
+  const backToMsgBox = () => {
+    setMessageUser("");
+  };
+
   return (
     <div className={expanded ? "message-container" : "message-box"}>
       <div
@@ -28,48 +37,98 @@ const MessageBox = () => {
           expanded ? "message-box-extended" : "message-box-not-extended"
         }
       >
-        <div className="message-box__content-top">
-          <h1>Messages</h1>
-          <div className="message-box__content-top__icons">
-            <span className="icon" onClick={handleModal}>
-              <FontAwesomeIcon icon={faEnvelope} size="2xl" />
-            </span>
-            <span className="icon" onClick={handleExpandClick}>
-              <FontAwesomeIcon
-                icon={expanded ? faAnglesDown : faAnglesUp}
-                size="2xl"
-              />
-            </span>
+        {!messageUser ? (
+          <div className="message-box__content-top">
+            <div className="message-box__content-top__title">
+              <h1>Messages</h1>
+            </div>
+            <div className="message-box__content-top__icons">
+              <span className="icon" onClick={handleModal}>
+                <FontAwesomeIcon icon={faEnvelope} size="2xl" />
+              </span>
+              <span className="icon" onClick={handleExpandClick}>
+                <FontAwesomeIcon
+                  icon={expanded ? faAnglesDown : faAnglesUp}
+                  size="2xl"
+                />
+              </span>
+            </div>
           </div>
-        </div>
-
-        {expanded && (
+        ) : (
           <>
-            <Link
-              href="/messages/requests"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <div className="message-request">
-                <div className="message-request__icon" id="message-icon">
-                  <FontAwesomeIcon icon={faEnvelope} size="2xl" />
+            {expanded ? (
+              <div className="message-box__content-top">
+                <div className="message-box__content-top__title">
+                  <span onClick={backToMsgBox}>
+                    <FontAwesomeIcon icon={faArrowLeft} size="xl" />
+                  </span>
+                  <h1>{messageUser}</h1>
                 </div>
-                <p>Message requests</p>
+                <div className="message-box__content-top__icons">
+                  <span className="icon" onClick={handleExpandClick}>
+                    <FontAwesomeIcon
+                      icon={expanded ? faAnglesDown : faAnglesUp}
+                      size="2xl"
+                    />
+                  </span>
+                </div>
               </div>
-            </Link>
-            <div className="write-message">
-              <h1>Welcome to your inbox!</h1>
-              <p>
-                Write a line, share posts and more with private conversations
-                between you and others on X.
-              </p>
-            </div>
-            <div className="write-message__btn">
-              <button onClick={handleModal}>Write a message</button>
-            </div>
+            ) : (
+              <div className="message-box__content-top">
+                <div className="message-box__content-top__title">
+                  <h1>{messageUser}</h1>
+                </div>
+                <div className="message-box__content-top__icons">
+                  <span className="icon" onClick={handleExpandClick}>
+                    <FontAwesomeIcon
+                      icon={expanded ? faAnglesDown : faAnglesUp}
+                      size="2xl"
+                    />
+                  </span>
+                </div>
+              </div>
+            )}
           </>
         )}
 
-        <NewMessage modalOpen={modalOpen} setModalOpen={setModalOpen} />
+        {expanded && (
+          <>
+            {!messageUser ? (
+              <>
+                <Link
+                  href="/messages/requests"
+                  style={{ textDecoration: "none", color: "white" }}
+                >
+                  <div className="message-request">
+                    <div className="message-request__icon" id="message-icon">
+                      <FontAwesomeIcon icon={faEnvelope} size="2xl" />
+                    </div>
+                    <p>Message requests</p>
+                  </div>
+                </Link>
+                <div className="write-message">
+                  <h1>Welcome to your inbox!</h1>
+                  <p>
+                    Write a line, share posts and more with private
+                    conversations between you and others on X.
+                  </p>
+                </div>
+                <div className="write-message__btn">
+                  <button onClick={handleModal}>Write a message</button>
+                </div>
+              </>
+            ) : (
+              <Message />
+            )}
+          </>
+        )}
+
+        <NewMessage
+          modalOpen={modalOpen}
+          setExpanded={setExpanded}
+          setModalOpen={setModalOpen}
+          setMessageUser={setMessageUser}
+        />
       </div>
     </div>
   );

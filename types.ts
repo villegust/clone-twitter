@@ -19,7 +19,9 @@ interface Trends {
 
 interface ModalProps {
     modalOpen: boolean;
+    setExpanded: React.Dispatch<React.SetStateAction<boolean>>;
     setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    setMessageUser: React.Dispatch<React.SetStateAction<string>>;
   }
 
 //   interface SidebarItemProps {

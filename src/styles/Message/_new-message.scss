@@ -25,23 +25,64 @@
 
   &__header {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: space-between;
 
     h2 {
-      margin-top: 2rem;
       font-size: 2.2rem;
     }
-    .closeButton {
-      padding: 1rem;
-      position: absolute;
-      top: 2rem;
-      left: 2rem;
-      border-radius: 10rem;
 
-      &:hover {
-        background-color: $color-grey;
-        cursor: pointer;
+    &__title {
+      margin: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+
+      .closeButton {
+        padding: 1rem;
+        border-radius: 10rem;
+
+        &:hover {
+          background-color: $color-grey;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__btn {
+      margin-top: 2rem;
+      margin-right: 1rem;
+
+      .notActiveNextBtn {
+        border: none;
+        padding: 8px;
+        border-radius: 10rem;
+        background-color: $text-grey;
+        color: $color-dark;
+        font-size: 1.2rem;
+        font-weight: 600;
+        pointer-events: none;
+
+        @media (max-width: 1280px) {
+          width: fit-content;
+        }
+      }
+
+      .activeNextBtn {
+        border: none;
+        padding: 8px;
+        border-radius: 10rem;
+        background-color: $color-white;
+        color: $color-dark;
+        font-size: 1.2rem;
+        font-weight: 600;
+
+        @media (max-width: 1280px) {
+          width: fit-content;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }
@@ -51,7 +92,6 @@
     align-items: center;
     position: relative;
     border-bottom: 1px solid $color-grey;
-    margin-top: 3rem;
 
     .search-icon1 {
       display: flex;
