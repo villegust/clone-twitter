@@ -9,6 +9,8 @@ function FollowBar({ POST_DATA, TREND_DATA, pageName }: any) {
     <div>
       {pageName === "explore" ? (
         <Accounts POST_DATA={POST_DATA} />
+      ) : pageName === "message" ? (
+        ""
       ) : (
         <>
           <Search />

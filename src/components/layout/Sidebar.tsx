@@ -95,10 +95,14 @@ const Sidebar = ({ setPageName }: any) => {
             </Link>
 
             <Link className="links" href="/message">
-              <li>
+              <li
+                onClick={() => {
+                  setPageName("message");
+                }}
+              >
                 <Image
                   src="/images/sidebar/message.svg"
-                  alt="Notifications"
+                  alt="Message"
                   width={25}
                   height={25}
                 />

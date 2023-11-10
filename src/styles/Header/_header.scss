@@ -34,6 +34,44 @@
     width: 100%;
   }
 }
+
+// message header, might fix in future
+
+.message-header {
+  border-bottom: 1px solid #38444d;
+  padding: 2rem;
+  position: fixed;
+  width: 22.6%;
+  display: flex;
+  flex-direction: column;
+  background-color: $bg-black;
+
+  &__text {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+
+    h1 {
+      font-size: 2rem;
+      line-height: 1.75rem;
+      font-weight: 600;
+    }
+  }
+
+  @media (max-width: 1280px) {
+    width: 47.9%;
+  }
+
+  @media (max-width: 1010px) {
+    width: 62.3%;
+  }
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+}
+
 // .header {
 //   border-right: 1px solid #38444d;
 //   z-index: 100;

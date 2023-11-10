@@ -20,6 +20,20 @@ const Header: React.FC<HeaderProps> = ({ showBackArrow, label }) => {
     <>
       {label === "Explore" ? (
         <Search label={label} />
+      ) : label === "Messages" ? (
+        <div className="message-header">
+          <div className="header__text">
+            {showBackArrow && (
+              <BiArrowBack
+                onClick={handleBack}
+                color="white"
+                size={20}
+                className="back-arrow"
+              />
+            )}
+            <h1>{label}</h1>
+          </div>
+        </div>
       ) : (
         <div className="header">
           <div className="header__text">

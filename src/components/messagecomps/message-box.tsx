@@ -10,7 +10,7 @@ import {
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
 import NewMessage from "@/components/modals/newMessage";
-import Message from "@/components/messagecomps/message";
+import Message from "@/components/messagecomps/writeMessage";
 
 const MessageBox = () => {
   const [expanded, setExpanded] = useState(false);
