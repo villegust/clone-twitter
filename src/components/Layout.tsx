@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+
 import { POST_DATA } from "../../data";
 import { TREND_DATA } from "../../data";
+
 import Sidebar from "@/components/layout/Sidebar";
 import FollowBar from "@/components/layout/FollowBar";
 import WriteMessage from "@/components/messagecomps/writeMessage";
@@ -15,6 +17,14 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       setPageName(storedPageName);
     }
   }, []);
+
+  useEffect(() => {
+    const pathname = window.location.pathname;
+    const pathSegments = pathname.split("/");
+    const myParam = pathSegments[1];
+
+    setPageName(myParam);
+  }, [pageName]);
 
   useEffect(() => {
     // Update local storage whenever pageName changes

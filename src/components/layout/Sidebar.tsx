@@ -49,7 +49,7 @@ const Sidebar = ({ setPageName }: any) => {
             <Link className="links" href="/">
               <li
                 onClick={() => {
-                  setPageName("");
+                  setPageName("/");
                 }}
               >
                 <Image
