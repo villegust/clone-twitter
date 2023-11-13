@@ -4,9 +4,9 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
-import MessageFeed from "@/components/messagecomps/messageFeed";
+import MessageFeed from "@/components/messagecomps/MessageFeed";
 
-const MessageInbox = () => {
+const MessageInbox = ({ messageUser }: any) => {
   return (
     <>
       <div className="message-inbox-content">
@@ -25,7 +25,7 @@ const MessageInbox = () => {
           </div>
         </Link>
       </div>
-      <MessageFeed />
+      <MessageFeed messageUser={messageUser} />
     </>
   );
 };

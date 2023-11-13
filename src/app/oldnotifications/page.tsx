@@ -5,10 +5,10 @@ import { TREND_DATA } from "../../../data";
 
 import Sidebar from "@/components/layout/Sidebar";
 
-import Search from "@/components/headercomps/search";
-import Subscribe from "@/components/trendcomps/subscribe";
-import Trends from "@/components/trendcomps/trends";
-import Accounts from "@/components/trendcomps/recomendedAccounts";
+import Search from "@/components/headercomps/Search";
+import Subscribe from "@/components/trendcomps/Subscribe";
+import Trends from "@/components/trendcomps/Trends";
+import Accounts from "@/components/trendcomps/RecomendedAccounts";
 
 export default function Page() {
   return (

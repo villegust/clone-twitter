@@ -1,8 +1,8 @@
 import React from "react";
-import Search from "@/components/headercomps/search";
-import Subscribe from "@/components/trendcomps/subscribe";
-import Accounts from "@/components/trendcomps/recomendedAccounts";
-import Trends from "@/components/trendcomps/trends";
+import Search from "@/components/headercomps/Search";
+import Subscribe from "@/components/trendcomps/Subscribe";
+import Accounts from "@/components/trendcomps/RecomendedAccounts";
+import Trends from "@/components/trendcomps/Trends";
 
 function FollowBar({ POST_DATA, TREND_DATA, pageName }: any) {
   return (

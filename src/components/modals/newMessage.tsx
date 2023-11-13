@@ -12,6 +12,7 @@ const Modal: React.FC<ModalProps> = ({
   setExpanded,
   setModalOpen,
   setMessageUser,
+  setTemporaryUser,
 }) => {
   const [selectedUser, setSelectedUser] = useState("");
 
@@ -30,6 +31,8 @@ const Modal: React.FC<ModalProps> = ({
 
   const handleNextBtn = () => {
     setMessageUser(selectedUser);
+    setTemporaryUser(selectedUser);
+
     setExpanded(true);
     setModalOpen(false);
   };

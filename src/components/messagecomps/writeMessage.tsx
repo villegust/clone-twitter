@@ -4,13 +4,12 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faX } from "@fortawesome/free-solid-svg-icons";
 
-const Message = () => {
+const Message = ({ pageName }: any) => {
   const [messageImagePreview, setMessageImagePreview] = useState<string | null>(
     null
   );
 
   const handleMessageImageChange = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log("handleMessageImageChange called"); // Debug
     const file = e.target.files && e.target.files[0];
 
     if (file) {
@@ -28,10 +27,26 @@ const Message = () => {
     }
   };
   return (
-    <div className="message-content">
-      <div className="message-content__test">
+    <div
+      className={
+        pageName === "message" ? "message-content" : "box-message-content"
+      }
+    >
+      <div
+        className={
+          pageName === "message"
+            ? "message-content__test"
+            : "box-message-content__test"
+        }
+      >
         {messageImagePreview && (
-          <div className="message-content__test__image-preview">
+          <div
+            className={
+              pageName === "message"
+                ? "message-content__test__image-preview"
+                : "box-message-content__test__image-preview"
+            }
+          >
             <img src={messageImagePreview} alt="Image Preview" />
             <button
               onClick={() => {

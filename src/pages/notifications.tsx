@@ -2,9 +2,7 @@ import React from "react";
 import Head from "next/head";
 
 import Header from "@/components/Header";
-import MessageBox from "@/components/messagecomps/message-box";
-
-import { POST_DATA } from "../../data";
+import MessageBox from "@/components/messagecomps/MessageBox";
 
 export default function Notifications() {
   return (

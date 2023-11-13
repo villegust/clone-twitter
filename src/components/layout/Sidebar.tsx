@@ -9,7 +9,7 @@ import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 
 import { useEffect, useState } from "react";
 
-import IsMobile from "../isMobile/isMobile";
+import IsMobile from "../isMobile/IsMobile";
 
 const Sidebar = ({ setPageName }: any) => {
   const isMobile: boolean = IsMobile();

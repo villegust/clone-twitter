@@ -9,14 +9,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
-import NewMessage from "@/components/modals/newMessage";
-import Message from "@/components/messagecomps/writeMessage";
+import NewMessage from "@/components/modals/NewMessage";
+import Message from "@/components/messagecomps/WriteMessage";
 
-const MessageBox = () => {
+const MessageBox = ({ setMessageUser }: any) => {
   const [expanded, setExpanded] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
 
-  const [messageUser, setMessageUser] = useState("");
+  const [temporaryUser, setTemporaryUser] = useState("");
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -27,7 +27,7 @@ const MessageBox = () => {
   };
 
   const backToMsgBox = () => {
-    setMessageUser("");
+    setTemporaryUser("");
   };
 
   return (
@@ -37,7 +37,7 @@ const MessageBox = () => {
           expanded ? "message-box-extended" : "message-box-not-extended"
         }
       >
-        {!messageUser ? (
+        {!temporaryUser ? (
           <div className="message-box__content-top">
             <div className="message-box__content-top__title">
               <h1>Messages</h1>
@@ -62,7 +62,7 @@ const MessageBox = () => {
                   <span onClick={backToMsgBox}>
                     <FontAwesomeIcon icon={faArrowLeft} size="xl" />
                   </span>
-                  <h1>{messageUser}</h1>
+                  <h1>{temporaryUser}</h1>
                 </div>
                 <div className="message-box__content-top__icons">
                   <span className="icon" onClick={handleExpandClick}>
@@ -76,7 +76,7 @@ const MessageBox = () => {
             ) : (
               <div className="message-box__content-top">
                 <div className="message-box__content-top__title">
-                  <h1>{messageUser}</h1>
+                  <h1>{temporaryUser}</h1>
                 </div>
                 <div className="message-box__content-top__icons">
                   <span className="icon" onClick={handleExpandClick}>
@@ -93,7 +93,7 @@ const MessageBox = () => {
 
         {expanded && (
           <>
-            {!messageUser ? (
+            {!temporaryUser ? (
               <>
                 <Link
                   href="/messages/requests"
@@ -128,6 +128,7 @@ const MessageBox = () => {
           setExpanded={setExpanded}
           setModalOpen={setModalOpen}
           setMessageUser={setMessageUser}
+          setTemporaryUser={setTemporaryUser}
         />
       </div>
     </div>

@@ -22,6 +22,7 @@ interface ModalProps {
     setExpanded: React.Dispatch<React.SetStateAction<boolean>>;
     setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
     setMessageUser: React.Dispatch<React.SetStateAction<string>>;
+    setTemporaryUser: React.Dispatch<React.SetStateAction<string>>;
   }
 
 //   interface SidebarItemProps {
