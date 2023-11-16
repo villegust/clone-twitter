@@ -10,7 +10,7 @@ export default function Notifications() {
       <Head>
         <title>Notifications / X</title>
       </Head>
-      <Header showBackArrow label="Notifications" />
+      <Header label="Notifications" />
       <MessageBox />
     </>
   );

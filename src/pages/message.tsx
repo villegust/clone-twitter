@@ -9,7 +9,7 @@ export default function Message({ messageUser }: any) {
       <Head>
         <title>Messages / X</title>
       </Head>
-      <Header showBackArrow label="Messages" />
+      <Header label="Messages" />
       <MessageInbox messageUser={messageUser} />
     </>
   );

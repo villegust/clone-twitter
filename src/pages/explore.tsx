@@ -13,7 +13,7 @@ export default function Explore() {
       <Head>
         <title>Explore / X</title>
       </Head>
-      <Header showBackArrow label="Explore" />
+      <Header label="Explore" />
       <YourTrends TREND_DATA={TREND_DATA} />
     </>
     // <main className="main">

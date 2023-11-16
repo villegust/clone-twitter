@@ -38,3 +38,37 @@
     }
   }
 }
+
+.message-user-section {
+  display: flex;
+  flex-direction: column;
+
+  &__box {
+    display: flex;
+    padding: 2rem;
+    background-color: $color-grey;
+    border-right: 2px solid $color-twitter;
+
+    &__profile {
+      display: flex;
+
+      &__text {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        h1 {
+          margin-left: 1rem;
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+          color: $text-grey;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
