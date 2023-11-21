@@ -1,152 +1,155 @@
-@use "../globals" as *;
+// @use "../globals" as *;
 
-.modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: $color-overlay;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-}
+// .modalOverlay {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background: $color-overlay;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   z-index: 2;
+//   overflow-y: auto;
+//   overflow-x: hidden;
+// }
 
-.modal {
-  background: $color-dark;
-  position: relative;
-  border-radius: 1.5rem;
-  min-width: 30%;
-  min-height: 70%;
-  border: 1px solid $color-grey;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+// // new message modal, maybe delete?
+// .modal {
+//   background: $color-dark;
+//   position: relative;
+//   border-radius: 1.5rem;
+//   min-width: 30%;
+//   min-height: 70%;
+//   border: 1px solid $color-grey;
+//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
-  &__header {
-    display: flex;
-    justify-content: space-between;
+//   &__header {
+//     display: flex;
+//     justify-content: space-between;
 
-    h2 {
-      font-size: 2.2rem;
-    }
+//     h2 {
+//       font-size: 2.2rem;
+//     }
 
-    &__title {
-      margin: 2rem;
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
+//     &__title {
+//       margin: 2rem;
+//       display: flex;
+//       gap: 1.5rem;
+//       align-items: center;
 
-      .closeButton {
-        padding: 1rem;
-        border-radius: 10rem;
+//       .closeButton {
+//         padding: 1rem;
+//         border-radius: 10rem;
 
-        &:hover {
-          background-color: $color-grey;
-          cursor: pointer;
-        }
-      }
-    }
+//         &:hover {
+//           background-color: $color-grey;
+//           cursor: pointer;
+//         }
+//       }
+//     }
 
-    &__btn {
-      margin-top: 2rem;
-      margin-right: 1rem;
+//     &__btn {
+//       margin-top: 2rem;
+//       margin-right: 1rem;
 
-      .notActiveNextBtn {
-        border: none;
-        padding: 8px;
-        border-radius: 10rem;
-        background-color: $text-grey;
-        color: $color-dark;
-        font-size: 1.2rem;
-        font-weight: 600;
-        pointer-events: none;
+//       .notActiveNextBtn {
+//         border: none;
+//         padding: 8px;
+//         border-radius: 10rem;
+//         background-color: $text-grey;
+//         color: $color-dark;
+//         font-size: 1.2rem;
+//         font-weight: 600;
+//         pointer-events: none;
 
-        @media (max-width: 1280px) {
-          width: fit-content;
-        }
-      }
+//         @media (max-width: 1280px) {
+//           width: fit-content;
+//         }
+//       }
 
-      .activeNextBtn {
-        border: none;
-        padding: 8px;
-        border-radius: 10rem;
-        background-color: $color-white;
-        color: $color-dark;
-        font-size: 1.2rem;
-        font-weight: 600;
+//       .activeNextBtn {
+//         border: none;
+//         padding: 8px;
+//         border-radius: 10rem;
+//         background-color: $color-white;
+//         color: $color-dark;
+//         font-size: 1.2rem;
+//         font-weight: 600;
 
-        @media (max-width: 1280px) {
-          width: fit-content;
-        }
+//         @media (max-width: 1280px) {
+//           width: fit-content;
+//         }
 
-        &:hover {
-          cursor: pointer;
-        }
-      }
-    }
-  }
+//         &:hover {
+//           cursor: pointer;
+//         }
+//       }
+//     }
+//   }
 
-  .search-bar1 {
-    display: flex;
-    align-items: center;
-    position: relative;
-    border-bottom: 1px solid $color-grey;
+//   .search-bar1 {
+//     display: flex;
+//     align-items: center;
+//     position: relative;
+//     border-bottom: 1px solid $color-grey;
 
-    .search-icon1 {
-      display: flex;
-      align-items: center;
-      position: absolute;
-      left: 20px; // Adjust the position as needed
-      color: $color-twitter;
-      height: 100%;
-      z-index: 1;
-    }
+//     .search-icon1 {
+//       display: flex;
+//       align-items: center;
+//       position: absolute;
+//       left: 20px; // Adjust the position as needed
+//       color: $color-twitter;
+//       height: 100%;
+//       z-index: 1;
+//     }
 
-    input {
-      border-radius: 10rem;
-      padding: 1.3rem;
-      width: 100%;
-      background-color: $color-dark;
-      color: $text-white;
-      border: none;
-      font-size: 1.5rem;
-      outline: none;
-      padding-left: 5rem; // Ensure input text doesn't overlap the icon
+//     input {
+//       border-radius: 10rem;
+//       padding: 1.3rem;
+//       width: 100%;
+//       background-color: $color-dark;
+//       color: $text-white;
+//       border: none;
+//       font-size: 1.5rem;
+//       outline: none;
+//       padding-left: 5rem; // Ensure input text doesn't overlap the icon
 
-      &:focus {
-        .search-icon1 {
-          color: $color-twitter;
-        }
-      }
-    }
-  }
+//       &:focus {
+//         .search-icon1 {
+//           color: $color-twitter;
+//         }
+//       }
+//     }
+//   }
 
-  .create-group {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 2rem;
-    border-bottom: 1px solid $color-grey;
+//   .create-group {
+//     display: flex;
+//     align-items: center;
+//     gap: 1.5rem;
+//     padding: 2rem;
+//     border-bottom: 1px solid $color-grey;
 
-    &__icon {
-      border-radius: 10rem;
-      padding: 1rem;
-      border: 1px solid $text-grey;
-      color: $color-twitter;
-    }
+//     &__icon {
+//       border-radius: 10rem;
+//       padding: 1rem;
+//       border: 1px solid $text-grey;
+//       color: $color-twitter;
+//     }
 
-    &__text {
-      color: $color-twitter;
+//     &__text {
+//       color: $color-twitter;
 
-      p {
-        font-size: 1.6rem;
-      }
-    }
+//       p {
+//         font-size: 1.6rem;
+//       }
+//     }
 
-    &:hover {
-      cursor: pointer;
-      background-color: $test;
-    }
-  }
-}
+//     &:hover {
+//       cursor: pointer;
+//       background-color: $test;
+//     }
+//   }
+// }

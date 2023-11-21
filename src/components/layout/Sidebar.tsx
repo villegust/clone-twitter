@@ -66,9 +66,9 @@ const Sidebar = ({ setPageName }: any) => {
           <div className="sidebar-menu">
             <div className="sidebar-menu__test">
               <SidebarLogo />
-              {items.map((item) => (
+              {items.map((item, index) => (
                 <SidebarItem
-                  key={item.href}
+                  key={index}
                   // alert={item.alert}
                   auth={item.auth}
                   href={item.href}

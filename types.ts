@@ -17,19 +17,52 @@ interface Trends {
     totalPosts: number,
 }
 
+// interface ModalProps {
+//     modalOpen: boolean;
+//     setExpanded: React.Dispatch<React.SetStateAction<boolean>>;
+//     setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+//     setMessageUser: React.Dispatch<React.SetStateAction<string>>;
+//     setTemporaryUser: React.Dispatch<React.SetStateAction<string>>;
+//   }
+
 interface ModalProps {
-    modalOpen: boolean;
-    setExpanded: React.Dispatch<React.SetStateAction<boolean>>;
-    setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-    setMessageUser: React.Dispatch<React.SetStateAction<string>>;
-    setTemporaryUser: React.Dispatch<React.SetStateAction<string>>;
+  isOpen?: boolean;
+  onClose: () => void;
+  onSubmit: () => void;
+  title?: string;
+  body?: React.ReactElement;
+  footer?: React.ReactElement;
+  actionLabel: string;
+  disabled?: boolean;
+}
+
+  interface ButtonProps {
+    label: string;
+    secondary?: boolean;
+    fullWidth?: boolean;
+    large?: boolean;
+    onClick: () => void;
+    disabled?: boolean;
+    outline?: boolean;
   }
 
-//   interface SidebarItemProps {
-//     label: string;
-//     icon: IconType;
-//     href?: string;
-//     onClick?: () => void;
-//     auth?: boolean;
-//     alert?: boolean;
-//   }
+  interface InputProps {
+    placeholder?: string;
+    value?: string;
+    type?: string;
+    disabled?: boolean;
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    label?: string;
+  }
+
+  interface LoginModalStore {
+    isOpen: boolean;
+    onOpen: () => void;
+    onClose: () => void;
+  }
+
+  interface RegisterModalStore {
+    isOpen: boolean;
+    onOpen: () => void;
+    onClose: () => void;
+  }
