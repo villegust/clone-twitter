@@ -1,124 +1,252 @@
 @use "../globals" as *;
 
-nav {
-  display: flex;
-  justify-content: flex-end;
-}
 .sidebar {
-  width: 27.5rem;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  // border-right: 1px solid #38444d;
-  transition: width 0.3s;
+  padding-right: 1rem;
+  grid-column: span 1 / span 1;
+  height: 100%;
 
-  .sidebar-menu {
-    display: flex;
-    flex-direction: column;
+  @media (min-width: 768px) {
+    padding-right: 1.5rem;
+  }
+}
 
-    @media (max-width: 1280px) {
-      align-items: flex-end;
-    }
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 
-    li {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2rem;
-      font-weight: 300;
-      width: fit-content;
-      padding: 16px;
-      margin-right: 1rem;
-      cursor: pointer;
-      transition: background 0.2s;
-      border-radius: 10rem;
-      text-decoration: none;
-      color: white;
+  &__test {
+    margin-top: 0.5rem;
 
-      span {
-        margin-left: 2rem;
-
-        @media (max-width: 1280px) {
-          display: none;
-        }
-      }
-
-      &:hover {
-        background: $color-grey;
-      }
+    @media (min-width: 1024px) {
+      width: 230px;
     }
   }
-  button {
-    margin-top: 2rem;
-    width: 90%;
-    margin-right: 1rem;
+}
+
+// Logo
+.sidebar-logo {
+  display: flex;
+  padding: 1.5rem;
+  cursor: pointer;
+}
+
+//sidebar item
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 10rem;
+
+  &:hover {
+    background-color: $color-grey;
+  }
+
+  &__icon {
+    display: flex;
+    position: relative;
+    padding: 1rem;
     justify-content: center;
     align-items: center;
-    border: none;
-    padding: 16px;
-    border-radius: 10rem;
-    background-color: $color-twitter;
-    color: white;
-    font-size: 1.6rem;
-    font-weight: 600;
+    border-radius: 9999px;
+    cursor: pointer;
 
-    @media (max-width: 1280px) {
-      width: fit-content;
-    }
-
-    &:hover {
-      cursor: pointer;
+    @media (min-width: 1024px) {
+      display: none;
     }
   }
 
-  .profile {
-    position: absolute;
-    display: flex;
+  &__test {
+    display: none;
+    position: relative;
+    gap: 1rem;
+    padding: 1.5rem;
     align-items: center;
-    bottom: 2rem;
-    padding: 8px 16px 8px 16px;
-    border-radius: 10rem;
-    width: 95%;
+    cursor: pointer;
 
-    &__content {
+    @media (min-width: 1024px) {
       display: flex;
-      width: 100%;
+    }
 
-      &__text {
-        margin-left: 1rem;
+    p {
+      display: none;
+      font-size: 2rem;
+      line-height: 1.75rem;
+      color: #ffffff;
 
-        h6 {
-          font-size: 1.6rem;
-          font-weight: 400;
-        }
-
-        p {
-          font-size: 1.6rem;
-          font-weight: 300;
-          color: $text-grey;
-        }
-
-        @media (max-width: 1280px) {
-          display: none;
-        }
+      @media (min-width: 1024px) {
+        display: block;
       }
     }
-    @media (max-width: 1280px) {
-      width: auto;
-    }
-
-    &:hover {
-      background: $color-grey;
-      cursor: pointer;
+    .dot {
+      position: absolute;
+      left: 0;
+      top: -1rem;
     }
   }
 }
 
-.links {
-  text-decoration: none;
-  color: white;
+//tweet button
+.tweet-button {
+  display: flex;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10rem;
+  cursor: pointer;
+  background-color: $color-twitter;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
 }
 
-.bold-link {
-  font-weight: 900;
+.tweet-text {
+  display: none;
+  margin-top: 1rem;
+  padding: 16px;
+  border-radius: 9999px;
+  background-color: $color-twitter;
+
+  cursor: pointer;
+
+  @media (min-width: 1024px) {
+    display: block;
+  }
+
+  p {
+    display: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: #ffffff;
+
+    @media (min-width: 1024px) {
+      display: block;
+    }
+  }
 }
+
+// nav {
+//   display: flex;
+//   justify-content: flex-end;
+// }
+// .sidebar {
+//   width: 27.5rem;
+//   position: fixed;
+//   top: 0;
+//   bottom: 0;
+//   // border-right: 1px solid #38444d;
+//   transition: width 0.3s;
+
+//   .sidebar-menu {
+//     display: flex;
+//     flex-direction: column;
+
+//     @media (max-width: 1280px) {
+//       align-items: flex-end;
+//     }
+
+//     li {
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       font-size: 2rem;
+//       font-weight: 300;
+//       width: fit-content;
+//       padding: 16px;
+//       margin-right: 1rem;
+//       cursor: pointer;
+//       transition: background 0.2s;
+//       border-radius: 10rem;
+//       text-decoration: none;
+//       color: white;
+
+//       span {
+//         margin-left: 2rem;
+
+//         @media (max-width: 1280px) {
+//           display: none;
+//         }
+//       }
+
+//       &:hover {
+//         background: $color-grey;
+//       }
+//     }
+//   }
+//   button {
+//     margin-top: 2rem;
+//     width: 90%;
+//     margin-right: 1rem;
+//     justify-content: center;
+//     align-items: center;
+//     border: none;
+//     padding: 16px;
+//     border-radius: 10rem;
+//     background-color: $color-twitter;
+//     color: white;
+//     font-size: 1.6rem;
+//     font-weight: 600;
+
+//     @media (max-width: 1280px) {
+//       width: fit-content;
+//     }
+
+//     &:hover {
+//       cursor: pointer;
+//     }
+//   }
+
+//   .profile {
+//     position: absolute;
+//     display: flex;
+//     align-items: center;
+//     bottom: 2rem;
+//     padding: 8px 16px 8px 16px;
+//     border-radius: 10rem;
+//     width: 95%;
+
+//     &__content {
+//       display: flex;
+//       width: 100%;
+
+//       &__text {
+//         margin-left: 1rem;
+
+//         h6 {
+//           font-size: 1.6rem;
+//           font-weight: 400;
+//         }
+
+//         p {
+//           font-size: 1.6rem;
+//           font-weight: 300;
+//           color: $text-grey;
+//         }
+
+//         @media (max-width: 1280px) {
+//           display: none;
+//         }
+//       }
+//     }
+//     @media (max-width: 1280px) {
+//       width: auto;
+//     }
+
+//     &:hover {
+//       background: $color-grey;
+//       cursor: pointer;
+//     }
+//   }
+// }
+
+// .links {
+//   text-decoration: none;
+//   color: white;
+// }
+
+// .bold-link {
+//   font-weight: 900;
+// }
