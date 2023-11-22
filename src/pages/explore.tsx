@@ -5,7 +5,7 @@ import { POST_DATA } from "../../data";
 import { TREND_DATA } from "../../data";
 
 import Header from "@/components/Header";
-import YourTrends from "@/components/explorecomps/YourTrends";
+import YourTrends from "@/oldStuff/explorecomps/YourTrends";
 
 export default function Explore() {
   return (

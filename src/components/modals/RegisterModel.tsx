@@ -17,6 +17,7 @@ const RegisterModal = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const onToggle = useCallback(() => {
+    console.log("onToggle run in registerModal.");
     if (isLoading) {
       return;
     }

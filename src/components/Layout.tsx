@@ -5,7 +5,7 @@ import { TREND_DATA } from "../../data";
 
 import Sidebar from "@/components/layout/Sidebar";
 import FollowBar from "@/components/layout/FollowBar";
-import WriteMessage from "@/components/messagecomps/WriteMessage";
+import WriteMessage from "@/oldStuff/messagecomps/WriteMessage";
 import NewMessage from "@/components/modals/NewMessage";
 
 interface LayoutProps {
@@ -98,13 +98,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           />
         )}
       </div>
-      <NewMessage
+      {/* <NewMessage
         modalOpen={modalOpen}
         setExpanded={setExpanded}
         setModalOpen={setModalOpen}
         setMessageUser={setMessageUser}
         setTemporaryUser={setTemporaryUser}
-      />
+      /> */}
     </div>
   );
 };

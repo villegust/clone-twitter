@@ -1,10 +1,6 @@
 import React, { useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faX,
-  faMagnifyingGlass,
-  faUsers,
-} from "@fortawesome/free-solid-svg-icons";
+import { faX } from "@fortawesome/free-solid-svg-icons";
 import Button from "./Button";
 
 const Modal: React.FC<ModalProps> = ({

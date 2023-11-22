@@ -2,7 +2,6 @@ import React from "react";
 import Head from "next/head";
 
 import Header from "@/components/Header";
-import MessageBox from "@/components/messagecomps/MessageBox";
 
 export default function Notifications() {
   return (
@@ -11,7 +10,6 @@ export default function Notifications() {
         <title>Notifications / X</title>
       </Head>
       <Header label="Notifications" />
-      <MessageBox />
     </>
   );
 }

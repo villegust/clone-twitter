@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
-import MessageFeed from "@/components/messagecomps/MessageFeed";
+import MessageFeed from "@/oldStuff/messagecomps/MessageFeed";
 
 const MessageInbox = ({ messageUser }: any) => {
   return (

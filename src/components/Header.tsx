@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { BiArrowBack } from "react-icons/bi";
 
-import Search from "@/components/headercomps/Search";
+import Search from "@/oldStuff/headercomps/Search";
 
 interface HeaderProps {
   showBackArrow?: boolean;

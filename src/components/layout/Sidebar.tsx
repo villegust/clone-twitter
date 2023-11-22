@@ -11,7 +11,7 @@ import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 
 import { useEffect, useState } from "react";
 
-import IsMobile from "../isMobile/IsMobile";
+import IsMobile from "../../oldStuff/isMobile/IsMobile";
 import SidebarLogo from "./SidebarLogo";
 import SidebarItem from "./SidebarItem";
 import SidebarTweetButton from "./SidebarTweetButton";
