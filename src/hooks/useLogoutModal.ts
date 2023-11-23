@@ -1,9 +1,9 @@
 import { create } from "zustand";
 
-const useLoginModal = create<LoginModalStore>((set) => ({
+const useLogoutModal = create<LogoutModalStore>((set) => ({
   isOpen: false,
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false }),
 }));
 
-export default useLoginModal;
+export default useLogoutModal;

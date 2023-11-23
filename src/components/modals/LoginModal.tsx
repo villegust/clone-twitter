@@ -1,7 +1,8 @@
-import { useState, useCallback } from "react";
+import { useCallback, useState } from "react";
 
 import useLoginModal from "@/hooks/useLoginModal";
 import useRegisterModal from "@/hooks/useRegisterModal";
+import { signIn } from "next-auth/react";
 
 import Input from "../Input";
 import Modal from "../Modal";
@@ -15,15 +16,22 @@ const LoginModal = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const onToggle = useCallback(() => {
+    if (isLoading) {
+      return;
+    }
+
     loginModal.onClose();
     registerModal.onOpen();
   }, [loginModal, registerModal]);
 
-  const onSubmit = useCallback(() => {
+  const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
 
-      // TODO ADD LOG IN
+      await signIn("credentials", {
+        email,
+        password,
+      });
 
       loginModal.onClose();
     } catch (error) {
@@ -31,7 +39,7 @@ const LoginModal = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [loginModal]);
+  }, [loginModal, email, password]);
 
   const bodyContent = (
     <div className="inputs">
@@ -59,7 +67,6 @@ const LoginModal = () => {
       </p>
     </div>
   );
-
   return (
     <Modal
       disabled={isLoading}

@@ -1,3 +1,5 @@
+import { IconType } from "react-icons";
+
 const Input: React.FC<InputProps> = ({
   placeholder,
   value,
@@ -13,7 +15,6 @@ const Input: React.FC<InputProps> = ({
       value={value}
       placeholder={placeholder}
       type={type}
-      className="input"
     />
   );
 };

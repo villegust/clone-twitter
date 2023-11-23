@@ -1,11 +1,17 @@
 @use "../globals" as *;
 
-.sidebar {
-  padding-right: 1rem;
-  grid-column: span 1 / span 1;
-  height: 100%;
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
 
-  @media (min-width: 768px) {
+.sidebar {
+  width: 27.5rem;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+
+  @media (min-width: 500px) {
     padding-right: 1.5rem;
   }
 }
@@ -18,7 +24,7 @@
   &__test {
     margin-top: 0.5rem;
 
-    @media (min-width: 1024px) {
+    @media (min-width: 1280px) {
       width: 230px;
     }
   }
@@ -51,7 +57,7 @@
     border-radius: 9999px;
     cursor: pointer;
 
-    @media (min-width: 1024px) {
+    @media (min-width: 1280px) {
       display: none;
     }
   }
@@ -60,12 +66,13 @@
     display: none;
     position: relative;
     gap: 1rem;
-    padding: 1.5rem;
+    padding: 2rem;
     align-items: center;
     cursor: pointer;
 
-    @media (min-width: 1024px) {
+    @media (min-width: 1280px) {
       display: flex;
+      padding: 1.5rem;
     }
 
     p {
@@ -74,7 +81,7 @@
       line-height: 1.75rem;
       color: #ffffff;
 
-      @media (min-width: 1024px) {
+      @media (min-width: 1280px) {
         display: block;
       }
     }
@@ -87,6 +94,13 @@
 }
 
 //tweet button
+
+.button-align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .tweet-button {
   display: flex;
   padding: 1rem;
@@ -94,10 +108,12 @@
   justify-content: center;
   align-items: center;
   border-radius: 10rem;
+  width: 3.5rem;
+  height: 3.5rem;
   cursor: pointer;
   background-color: $color-twitter;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1280px) {
     display: none;
   }
 }
@@ -105,13 +121,14 @@
 .tweet-text {
   display: none;
   margin-top: 1rem;
+  width: 100%;
   padding: 16px;
   border-radius: 9999px;
   background-color: $color-twitter;
 
   cursor: pointer;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1280px) {
     display: block;
   }
 
@@ -122,8 +139,59 @@
     text-align: center;
     color: #ffffff;
 
-    @media (min-width: 1024px) {
+    @media (min-width: 1280px) {
       display: block;
+    }
+  }
+}
+
+// sidebar profile, chage in future
+
+.profile {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px 8px 16px;
+  bottom: 2rem;
+  width: 85%;
+  border-radius: 10rem;
+
+  &__content {
+    display: flex;
+    width: 100%;
+
+    &__text {
+      margin-left: 1rem;
+
+      h6 {
+        font-size: 1.6rem;
+        font-weight: 400;
+      }
+
+      p {
+        font-size: 1.6rem;
+        font-weight: 300;
+        color: $text-grey;
+      }
+
+      @media (max-width: 1280px) {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 1280px) {
+    width: auto;
+  }
+
+  &:hover {
+    background: $color-grey;
+    cursor: pointer;
+  }
+
+  @media (max-width: 1280px) {
+    #ellipsis {
+      display: none;
     }
   }
 }

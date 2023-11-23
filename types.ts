@@ -1,20 +1,20 @@
 interface Data {
-    id: number,
-    profilePic: string,
-    username: string,
-    name: string,
-    posted: string,
-    postText: string,
-    postImg: string,
-    comments: number,
-    reposts: number,
-    likes: number,
-    views: number 
+  id: number;
+  profilePic: string;
+  username: string;
+  name: string;
+  posted: string;
+  postText: string;
+  postImg: string;
+  comments: number;
+  reposts: number;
+  likes: number;
+  views: number;
 }
 
 interface Trends {
-    name: string,
-    totalPosts: number,
+  name: string;
+  totalPosts: number;
 }
 
 // interface ModalProps {
@@ -36,33 +36,46 @@ interface ModalProps {
   disabled?: boolean;
 }
 
-  interface ButtonProps {
-    label: string;
-    secondary?: boolean;
-    fullWidth?: boolean;
-    large?: boolean;
-    onClick: () => void;
-    disabled?: boolean;
-    outline?: boolean;
-  }
+interface SidebarProfileProps {
+  isOpen?: boolean;
+  onClose: () => void;
+  body?: React.ReactElement;
+  disabled?: boolean;
+}
 
-  interface InputProps {
-    placeholder?: string;
-    value?: string;
-    type?: string;
-    disabled?: boolean;
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-    label?: string;
-  }
+interface ButtonProps {
+  label: string;
+  secondary?: boolean;
+  fullWidth?: boolean;
+  large?: boolean;
+  onClick: () => void;
+  disabled?: boolean;
+  outline?: boolean;
+}
 
-  interface LoginModalStore {
-    isOpen: boolean;
-    onOpen: () => void;
-    onClose: () => void;
-  }
+interface InputProps {
+  placeholder?: string;
+  value?: string;
+  type?: string;
+  disabled?: boolean;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  label?: string;
+}
 
-  interface RegisterModalStore {
-    isOpen: boolean;
-    onOpen: () => void;
-    onClose: () => void;
-  }
+interface LoginModalStore {
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+}
+
+interface RegisterModalStore {
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+}
+
+interface LogoutModalStore {
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+}

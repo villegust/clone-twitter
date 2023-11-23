@@ -4,6 +4,9 @@ import { useRouter } from "next/router";
 
 import { BsDot } from "react-icons/bs";
 
+import useCurrentUser from "@/hooks/useCurrentUser";
+import useLoginModal from "@/hooks/useLoginModal";
+
 interface SidebarItemProps {
   label: string;
   icon: IconType;
@@ -21,31 +24,21 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
   onClick,
   alert,
 }) => {
+  const loginModal = useLoginModal();
   const router = useRouter();
-  //   const loginModal = useLoginModal();
-
-  //   const { data: currentUser } = useCurrentUser();
+  const { data: currentUser } = useCurrentUser();
 
   const handleClick = useCallback(() => {
     if (onClick) {
       return onClick();
     }
-    if (href) {
+
+    if (auth && !currentUser) {
+      loginModal.onOpen();
+    } else if (href) {
       router.push(href);
     }
-  }, [router, href, auth, onClick]);
-
-  //   const handleClick = useCallback(() => {
-  //     if (onClick) {
-  //       return onClick();
-  //     }
-
-  //     if (auth && !currentUser) {
-  //       loginModal.onOpen();
-  //     } else if (href) {
-  //       router.push(href);
-  //     }
-  //   }, [router, href, auth, loginModal, onClick, currentUser]);
+  }, [router, href, auth, loginModal, onClick, currentUser]);
 
   return (
     <div className="sidebar-item" onClick={handleClick}>

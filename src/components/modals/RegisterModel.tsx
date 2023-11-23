@@ -1,6 +1,9 @@
-import { useState, useCallback } from "react";
+import axios from "axios";
+import { useCallback, useState } from "react";
+import toast from "react-hot-toast/headless";
+import { signIn } from "next-auth/react";
 
-import useLoginModal from "@/hooks/useRegisterModal";
+import useLoginModal from "@/hooks/useLoginModal";
 import useRegisterModal from "@/hooks/useRegisterModal";
 
 import Input from "../Input";
@@ -12,33 +15,46 @@ const RegisterModal = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
   const [name, setName] = useState("");
-  const [userName, setUserName] = useState("");
+
   const [isLoading, setIsLoading] = useState(false);
 
   const onToggle = useCallback(() => {
-    console.log("onToggle run in registerModal.");
     if (isLoading) {
       return;
     }
 
     registerModal.onClose();
     loginModal.onOpen();
-  }, [isLoading, registerModal, loginModal]);
+  }, [loginModal, registerModal, isLoading]);
 
-  const onSubmit = useCallback(() => {
+  const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
 
-      // TODO ADD REGISTER AND LOG IN
+      await axios.post("/api/register", {
+        email,
+        password,
+        username,
+        name,
+      });
+
+      toast.success("Account created");
+
+      signIn("credentials", {
+        email,
+        password,
+      });
 
       registerModal.onClose();
     } catch (error) {
       console.log(error);
+      toast.error("Somethin went wrong!");
     } finally {
       setIsLoading(false);
     }
-  }, [registerModal]);
+  }, [registerModal, email, password, username, name]);
 
   const bodyContent = (
     <div className="inputs">
@@ -56,8 +72,8 @@ const RegisterModal = () => {
       />
       <Input
         placeholder="Username"
-        onChange={(e) => setUserName(e.target.value)}
-        value={userName}
+        onChange={(e) => setUsername(e.target.value)}
+        value={username}
         disabled={isLoading}
       />
       <Input
