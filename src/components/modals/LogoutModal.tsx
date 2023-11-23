@@ -4,7 +4,7 @@ import useLogoutModal from "@/hooks/useLogoutModal";
 const LogoutModal = () => {
   const logoutModal = useLogoutModal();
 
-  const bodyContent = <div>neger</div>;
+  const bodyContent = <div></div>;
 
   return (
     <ProfileModal
