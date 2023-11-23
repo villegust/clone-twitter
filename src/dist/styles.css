@@ -908,6 +908,7 @@ nav {
 }
 .profile__content__text {
   margin-left: 1rem;
+  user-select: none;
 }
 .profile__content__text h6 {
   font-size: 1.6rem;
@@ -1072,6 +1073,68 @@ nav {
 }
 .footerContent p span:hover {
   text-decoration: underline;
+}
+
+.profile-modal {
+  position: fixed;
+  bottom: 10rem;
+  left: 17%;
+  width: 100%;
+  height: auto;
+  z-index: 1000;
+}
+@media (max-width: 1280px) {
+  .profile-modal {
+    left: 4rem;
+  }
+}
+@media (min-width: 500px) {
+  .profile-modal {
+    width: 60%;
+    max-width: 48rem;
+    height: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .profile-modal {
+    width: 50%;
+    max-width: 48rem;
+    height: auto;
+  }
+}
+.profile-modal__content {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  border-radius: 1rem;
+  padding: 1rem;
+  border-width: 0;
+  outline-style: none;
+  width: 60%;
+  height: 100%;
+  background-color: #000000;
+  border: 1px solid rgba(248, 248, 248, 0.1529411765);
+}
+@media (min-width: 1024px) {
+  .profile-modal__content {
+    height: auto;
+  }
+}
+.profile-modal__content__body {
+  width: 100%;
+  flex: 1 1 auto;
+}
+
+.logout-box__text {
+  padding: 1rem;
+}
+.logout-box__text p {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.logout-box__text:hover {
+  background-color: rgba(248, 248, 248, 0.1529411765);
+  cursor: pointer;
 }
 
 .message-box {

@@ -2,10 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { BiLogOut } from "react-icons/bi";
 import { BsHouseFill, BsBellFill } from "react-icons/bs";
 import { FaUser } from "react-icons/fa";
-import { signOut } from "next-auth/react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
@@ -80,13 +78,6 @@ const Sidebar = ({ setPageName }: any) => {
                     label={item.label}
                   />
                 ))}
-                {currentUser && (
-                  <SidebarItem
-                    onClick={() => signOut()}
-                    icon={BiLogOut}
-                    label="LogOut"
-                  />
-                )}
                 <SidebarTweetButton />
                 <SidebarProfile />
               </div>
