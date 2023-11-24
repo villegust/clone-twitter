@@ -34,15 +34,12 @@
 
     &__account-box {
       display: flex;
+      gap: 2rem;
       padding: 1.5rem 2rem 1.5rem 2rem;
       transition: 0.3s;
 
       &:hover {
         background-color: $color-grey;
-      }
-
-      &__image {
-        margin-right: 1.5rem;
       }
 
       &__info {

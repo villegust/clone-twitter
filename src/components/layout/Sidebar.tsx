@@ -56,6 +56,7 @@ const Sidebar = ({ setPageName }: any) => {
     {
       icon: FaUser,
       label: "Profile",
+      href: "/user/123",
       auth: true,
     },
   ];

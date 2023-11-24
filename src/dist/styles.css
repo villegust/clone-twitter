@@ -538,101 +538,6 @@ body {
   background-color: rgba(248, 248, 248, 0.1529411765);
 }
 
-.account-section {
-  width: 53%;
-  margin-top: 1rem;
-}
-@media (max-width: 1500px) {
-  .account-section {
-    width: 60%;
-  }
-}
-@media (max-width: 1280px) {
-  .account-section {
-    width: 80%;
-  }
-}
-
-.account-content {
-  padding: 0.5rem 0 0 3rem;
-  display: flex;
-  flex-direction: column;
-}
-@media (max-width: 1010px) {
-  .account-content {
-    display: none;
-  }
-}
-.account-content__box {
-  background-color: #1b1e20;
-  border-radius: 2rem;
-}
-.account-content__box a {
-  text-decoration: none;
-  color: #ffffff;
-}
-.account-content__box__title {
-  padding: 2rem 2rem 0 2rem;
-  margin-bottom: 1rem;
-}
-.account-content__box__title h2 {
-  font-size: 2rem;
-}
-.account-content__box__account-box {
-  display: flex;
-  padding: 1.5rem 2rem 1.5rem 2rem;
-  transition: 0.3s;
-}
-.account-content__box__account-box:hover {
-  background-color: rgba(248, 248, 248, 0.1529411765);
-}
-.account-content__box__account-box__image {
-  margin-right: 1.5rem;
-}
-.account-content__box__account-box__info {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-}
-.account-content__box__account-box__info h3 {
-  font-size: 1.5rem;
-}
-.account-content__box__account-box__info p {
-  color: #7e7e7e;
-  font-size: 1.4rem;
-}
-.account-content__box__account-box__btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.account-content__box__account-box__btn button {
-  justify-content: center;
-  align-items: center;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 10rem;
-  background-color: #fff;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-.account-content__box__account-box__btn button:hover {
-  cursor: pointer;
-}
-.account-content__box__view-more {
-  font-size: 1.4rem;
-  padding: 2rem;
-  border-bottom-left-radius: 2rem;
-  border-bottom-right-radius: 2rem;
-  transition: 0.3s;
-}
-.account-content__box__view-more a {
-  color: #1b95e0 !important;
-}
-.account-content__box__view-more:hover {
-  background-color: rgba(248, 248, 248, 0.1529411765);
-}
-
 .header {
   border-bottom: 1px solid #38444d;
   padding: 2rem;
@@ -1135,6 +1040,131 @@ nav {
 .logout-box__text:hover {
   background-color: rgba(248, 248, 248, 0.1529411765);
   cursor: pointer;
+}
+
+.has-border {
+  border-width: 4px;
+  border-color: #000000;
+}
+
+.is-larger {
+  width: 8rem;
+  height: 8rem;
+}
+
+.is-large {
+  width: 5rem;
+  height: 4rem;
+}
+
+.container {
+  position: relative;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+.container:hover {
+  opacity: 0.9;
+}
+
+.account-section {
+  width: 53%;
+  margin-top: 1rem;
+}
+@media (max-width: 1500px) {
+  .account-section {
+    width: 60%;
+  }
+}
+@media (max-width: 1280px) {
+  .account-section {
+    width: 80%;
+  }
+}
+
+.account-content {
+  padding: 0.5rem 0 0 3rem;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 1010px) {
+  .account-content {
+    display: none;
+  }
+}
+.account-content__box {
+  background-color: #1b1e20;
+  border-radius: 2rem;
+}
+.account-content__box a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.account-content__box__title {
+  padding: 2rem 2rem 0 2rem;
+  margin-bottom: 1rem;
+}
+.account-content__box__title h2 {
+  font-size: 2rem;
+}
+.account-content__box__account-box {
+  display: flex;
+  gap: 2rem;
+  padding: 1.5rem 2rem 1.5rem 2rem;
+  transition: 0.3s;
+}
+.account-content__box__account-box:hover {
+  background-color: rgba(248, 248, 248, 0.1529411765);
+}
+.account-content__box__account-box__info {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.account-content__box__account-box__info h3 {
+  font-size: 1.5rem;
+}
+.account-content__box__account-box__info p {
+  color: #7e7e7e;
+  font-size: 1.4rem;
+}
+.account-content__box__account-box__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.account-content__box__account-box__btn button {
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10rem;
+  background-color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.account-content__box__account-box__btn button:hover {
+  cursor: pointer;
+}
+.account-content__box__view-more {
+  font-size: 1.4rem;
+  padding: 2rem;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  transition: 0.3s;
+}
+.account-content__box__view-more a {
+  color: #1b95e0 !important;
+}
+.account-content__box__view-more:hover {
+  background-color: rgba(248, 248, 248, 0.1529411765);
+}
+
+.if-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  z-index: 100000;
 }
 
 .message-box {

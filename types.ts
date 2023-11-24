@@ -79,3 +79,13 @@ interface LogoutModalStore {
   onOpen: () => void;
   onClose: () => void;
 }
+
+interface AvatarProps {
+  userId: string;
+  isLarge?: boolean;
+  hasBorder?: boolean;
+}
+
+interface UserHeroProps {
+  userId: string;
+}

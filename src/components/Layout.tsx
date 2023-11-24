@@ -57,14 +57,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       >
         <Sidebar setPageName={setPageName} />
 
-        <div className="main-content-borders">
-          {React.Children.map(children, (child) =>
-            React.cloneElement(child as React.ReactElement, {
-              messageUser,
-              setMessageUser,
-            })
-          )}
-        </div>
+        <div className="main-content-borders">{children}</div>
 
         {pageName === "message" ? (
           <div className="message-section">
@@ -91,11 +84,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             )}
           </div>
         ) : (
-          <FollowBar
-            POST_DATA={POST_DATA}
-            TREND_DATA={TREND_DATA}
-            pageName={pageName}
-          />
+          <FollowBar />
         )}
       </div>
       {/* <NewMessage
