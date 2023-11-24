@@ -59,16 +59,17 @@
     &__bio {
       display: flex;
       flex-direction: column;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
 
       p {
+        font-size: 1.4rem;
         color: $text-white;
       }
     }
     &__joined {
       display: flex;
       align-items: center;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
       gap: 0.5rem;
       color: $text-grey;
 

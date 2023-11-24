@@ -1053,7 +1053,7 @@ nav {
 }
 
 .is-large {
-  width: 5rem;
+  width: 4rem;
   height: 4rem;
 }
 
@@ -1210,15 +1210,16 @@ nav {
 .bio-content__user__bio {
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 .bio-content__user__bio p {
+  font-size: 1.4rem;
   color: #ffffff;
 }
 .bio-content__user__joined {
   display: flex;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   gap: 0.5rem;
   color: #7e7e7e;
 }

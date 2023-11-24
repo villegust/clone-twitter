@@ -1,11 +1,11 @@
 import React from "react";
-import Image from "next/image";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useLogoutModal from "@/hooks/useLogoutModal";
+import Avatar from "../Avatar";
 
 const SidebarProfile = () => {
   const { data: currentUser } = useCurrentUser();
@@ -25,12 +25,7 @@ const SidebarProfile = () => {
       {currentUser && (
         <div className="profile" onClick={handleOnClick}>
           <div className="profile__content">
-            <Image
-              src="/images/sidebar/profile.png"
-              alt="Logo"
-              width={40}
-              height={35}
-            />
+            <Avatar userId={currentUser.id} />
             <div className="profile__content__text">
               <h6>{currentUser.name}</h6>
               <p>@{currentUser.username}</p>

@@ -17,7 +17,7 @@ import SidebarItem from "./SidebarItem";
 import SidebarTweetButton from "./SidebarTweetButton";
 import SidebarProfile from "./SidebarProfile";
 
-const Sidebar = ({ setPageName }: any) => {
+const Sidebar = () => {
   const { data: currentUser } = useCurrentUser();
 
   const isMobile: boolean = IsMobile();
@@ -56,7 +56,7 @@ const Sidebar = ({ setPageName }: any) => {
     {
       icon: FaUser,
       label: "Profile",
-      href: "/user/123",
+      href: `/users/${currentUser.id}`,
       auth: true,
     },
   ];
