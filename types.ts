@@ -89,3 +89,7 @@ interface AvatarProps {
 interface UserHeroProps {
   userId: string;
 }
+
+interface UserBioProps {
+  userId: string;
+}
