@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import useUsers from "@/hooks/useUsers";
 import Avatar from "../Avatar";
 

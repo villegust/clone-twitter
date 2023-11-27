@@ -1117,7 +1117,6 @@ nav {
 }
 .account-content__box__account-box__info {
   display: flex;
-  width: 100%;
   flex-direction: column;
 }
 .account-content__box__account-box__info h3 {
@@ -1244,6 +1243,26 @@ nav {
 .bio-content__user__follow-following__content .text {
   color: #7e7e7e;
   font-size: 1.4rem;
+}
+
+.image-upload-container {
+  padding: 1rem;
+  border-radius: 0.375rem;
+  border: 2px dotted rgba(248, 248, 248, 0.1529411765);
+  width: 100%;
+  text-align: center;
+}
+.image-upload-container .image-upload-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-upload-container p {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+.image-upload-container:hover {
+  cursor: pointer;
 }
 
 .message-box {

@@ -80,6 +80,12 @@ interface LogoutModalStore {
   onClose: () => void;
 }
 
+interface EditModalStore {
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+}
+
 interface AvatarProps {
   userId: string;
   isLarge?: boolean;
@@ -92,4 +98,11 @@ interface UserHeroProps {
 
 interface UserBioProps {
   userId: string;
+}
+
+interface ImageUploadProps {
+  onChange: (base64: string) => void;
+  label: string;
+  value?: string;
+  disabled?: boolean;
 }
