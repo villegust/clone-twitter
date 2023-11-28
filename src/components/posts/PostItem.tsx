@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useMemo } from "react";
 import Image from "next/image";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,39 +13,87 @@ import {
   faBookmark,
 } from "@fortawesome/free-regular-svg-icons";
 
-const PostItem = ({
-  name,
-  username,
-  postText,
-  postImg,
-  posted,
-  comments,
-  reposts,
-  likes,
-  views,
-}: any) => {
+import { useRouter } from "next/router";
+import useLoginModal from "@/hooks/useLoginModal";
+import useCurrentUser from "@/hooks/useCurrentUser";
+import { formatDistanceToNowStrict } from "date-fns";
+import Avatar from "../Avatar";
+
+const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
+  const router = useRouter();
+
+  const loginModal = useLoginModal();
+
+  const { data: currentUser } = useCurrentUser();
+
+  const goToUser = useCallback(
+    (event: any) => {
+      event.stopPropagation();
+
+      router.push(`/users/${data.user.id}`);
+    },
+    [router, data.user.id]
+  );
+
+  const goToPost = useCallback(() => {
+    router.push(`/posts/${data.id}`);
+  }, [router, data.id]);
+
+  const onLike = useCallback(
+    (event: any) => {
+      event.stopPropagation();
+
+      loginModal.onOpen();
+    },
+    [loginModal]
+  );
+
+  const createdAt = useMemo(() => {
+    if (!data?.createdAt) {
+      return null;
+    }
+
+    return formatDistanceToNowStrict(new Date(data.createdAt));
+  }, [data?.createdAt]);
+
   return (
     <div className="post-content">
       <div className="post-content__top">
         <div className="post-content__top__image">
-          <Image
-            src="/images/sidebar/profile.png"
-            alt="Logo"
-            width={40}
-            height={35}
-          />
+          <Avatar userId={data.user.id} />
         </div>
         <div className="post-content__top__text">
           <div className="post-content__top__text__profile">
-            <h3>{name}</h3>
-            <p>
-              @{username} · {posted}
+            <h3 onClick={goToUser}>{data.user.name}</h3>
+            <p onClick={goToUser}>
+              @{data.user.username} · {createdAt}
             </p>
           </div>
-          <h4> {postText} </h4>
+          <h4> {data.body} </h4>
         </div>
       </div>
-      <div className="post-content__post-img">
+      <div className="post-content__like-and-share">
+        <div className="post-content__like-and-share__icons">
+          <FontAwesomeIcon id="comment" icon={faComment} size="lg" />
+          <p id="comment">{data.comments?.length || 0}</p>
+          {/* {data.comments >= 1000000
+            ? (data.comments / 1000000).toFixed(0) + " mn"
+            : data.comments >= 1000
+            ? (data.comments / 1000).toFixed(0) + " tn"
+            : data.comments} */}
+        </div>
+
+        <div className="post-content__like-and-share__icons" onClick={onLike}>
+          <FontAwesomeIcon id="like" icon={faHeart} size="lg" />
+          <p id="like">{data.likes?.length || 0}</p>
+          {/* {data.likes >= 1000000
+            ? (data.likes / 1000000).toFixed(0) + " mn"
+            : data.likes >= 1000
+            ? (data.likes / 1000).toFixed(0) + " tn"
+            : data.likes} */}
+        </div>
+      </div>
+      {/* <div className="post-content__post-img">
         <img src={postImg} alt="test" />
       </div>
       <div className="post-content__like-and-share">
@@ -64,7 +112,7 @@ const PostItem = ({
             : reposts >= 1000
             ? (reposts / 1000).toFixed(0) + " tn"
             : reposts}
-        </div>
+        </div> 
 
         <div className="post-content__like-and-share__icons">
           <FontAwesomeIcon icon={faHeart} size="lg" />
@@ -73,7 +121,7 @@ const PostItem = ({
             : likes >= 1000
             ? (likes / 1000).toFixed(0) + " tn"
             : likes}
-        </div>
+        </div> 
 
         <div className="post-content__like-and-share__icons">
           <FontAwesomeIcon icon={faChartSimple} size="lg" />
@@ -92,7 +140,7 @@ const PostItem = ({
             <FontAwesomeIcon icon={faArrowUpFromBracket} size="lg" />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -8,7 +8,15 @@ const Button: React.FC<ButtonProps> = ({
   outline,
 }) => {
   return (
-    <button disabled={disabled} onClick={onClick} className="test-btn">
+    <button
+      disabled={disabled}
+      onClick={onClick}
+      className={`
+        test-btn 
+        ${disabled ? "disable" : "allowed"}
+        ${secondary ? "bg-white" : "bg-twitter"}
+    `}
+    >
       {label}
     </button>
   );

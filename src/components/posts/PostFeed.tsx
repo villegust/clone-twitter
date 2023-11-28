@@ -1,22 +1,13 @@
+import usePosts from "@/hooks/usePosts";
 import PostItem from "./PostItem";
 
-const PostFeed = ({ POST_DATA }: any) => {
+const PostFeed: React.FC<PostFeedProps> = ({ userId }) => {
+  const { data: posts = [] } = usePosts(userId as string);
+
   return (
     <>
-      {POST_DATA.map((item: any, index: number) => (
-        <div key={index}>
-          <PostItem
-            name={item.name}
-            username={item.username}
-            postText={item.postText}
-            postImg={item.postImg}
-            posted={item.posted}
-            comments={item.comments}
-            reposts={item.reposts}
-            likes={item.likes}
-            views={item.views}
-          />
-        </div>
+      {posts.map((post: Record<string, any>) => (
+        <PostItem userId={userId} key={post.id} data={post} />
       ))}
     </>
   );

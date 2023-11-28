@@ -106,3 +106,18 @@ interface ImageUploadProps {
   value?: string;
   disabled?: boolean;
 }
+
+interface FormProps {
+  placeholder: string;
+  isComment?: boolean;
+  postId?: string;
+}
+
+interface PostFeedProps {
+  userId?: string;
+}
+
+interface PostItemProps {
+  data: Record<string, any>;
+  userId?: string;
+}

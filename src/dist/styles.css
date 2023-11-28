@@ -235,21 +235,23 @@ body {
 }
 .newpost-content__insertAndPost__post {
   margin-bottom: 2rem;
-}
-.newpost-content__insertAndPost__post button {
   margin-top: 2rem;
+}
+
+.loged-out-new-post {
+  padding: 3rem;
+}
+.loged-out-new-post h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-align: center;
+}
+.loged-out-new-post__buttons {
+  display: flex;
   justify-content: center;
   align-items: center;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 10rem;
-  background-color: #1b95e0;
-  color: white;
-  font-size: 1.6rem;
-  font-weight: 600;
-}
-.newpost-content__insertAndPost__post button:hover {
-  cursor: pointer;
+  gap: 3rem;
+  padding-top: 2rem;
 }
 
 .post-content {
@@ -280,7 +282,11 @@ body {
   color: #7e7e7e;
   font-size: 1.4rem;
 }
+.post-content__top__text__profile:hover {
+  cursor: pointer;
+}
 .post-content__top__text h4 {
+  margin-top: 1rem;
   font-size: 1.6rem;
   font-weight: 400;
 }
@@ -296,7 +302,7 @@ body {
 }
 .post-content__like-and-share {
   display: flex;
-  justify-content: space-evenly;
+  align-items: center;
   width: 100%;
   padding-bottom: 2rem;
   border-bottom: 1px solid #38444d;
@@ -305,12 +311,18 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-left: 3rem;
   color: #7e7e7e;
   font-size: 1.2rem;
 }
 .post-content__like-and-share__icons:hover {
-  color: rgb(209, 0, 0);
   cursor: pointer;
+}
+.post-content__like-and-share__icons:hover #comment {
+  color: #1b95e0;
+}
+.post-content__like-and-share__icons:hover #like {
+  color: red;
 }
 .post-content__like-and-share__bookmark {
   display: flex;
@@ -546,6 +558,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #010103;
+  z-index: 100;
 }
 .header__text {
   display: flex;
@@ -852,7 +865,23 @@ nav {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
 }
-.test-btn:hover {
+
+.bg-white {
+  background-color: #fff;
+  color: #000;
+}
+
+.bg-twitter {
+  background-color: #1b95e0;
+  color: #ffffff;
+}
+
+.disable {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.allowed:hover {
   opacity: 0.8;
   cursor: pointer;
 }
@@ -868,7 +897,7 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 2;
+  z-index: 999999999;
   overflow-y: auto;
   overflow-x: hidden;
 }
