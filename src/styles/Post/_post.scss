@@ -64,20 +64,24 @@
     &__icons {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.5rem;
       margin-left: 3rem;
       color: $text-grey;
       font-size: 1.2rem;
+    }
+
+    #like {
+      cursor: pointer;
+      &:hover {
+        color: red;
+      }
+    }
+
+    #comment {
+      cursor: pointer;
 
       &:hover {
-        cursor: pointer;
-        #comment {
-          color: $color-twitter;
-        }
-
-        #like {
-          color: red;
-        }
+        color: $color-twitter;
       }
     }
 
@@ -96,4 +100,8 @@
       }
     }
   }
+}
+
+.post-margin-top {
+  margin-top: 6rem;
 }

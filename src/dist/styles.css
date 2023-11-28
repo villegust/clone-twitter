@@ -168,7 +168,6 @@ body {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid #38444d;
-  margin-top: 6rem;
 }
 .newpost-content__profileAndInput {
   display: flex;
@@ -310,19 +309,22 @@ body {
 .post-content__like-and-share__icons {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
   margin-left: 3rem;
   color: #7e7e7e;
   font-size: 1.2rem;
 }
-.post-content__like-and-share__icons:hover {
+.post-content__like-and-share #like {
   cursor: pointer;
 }
-.post-content__like-and-share__icons:hover #comment {
-  color: #1b95e0;
-}
-.post-content__like-and-share__icons:hover #like {
+.post-content__like-and-share #like:hover {
   color: red;
+}
+.post-content__like-and-share #comment {
+  cursor: pointer;
+}
+.post-content__like-and-share #comment:hover {
+  color: #1b95e0;
 }
 .post-content__like-and-share__bookmark {
   display: flex;
@@ -335,6 +337,10 @@ body {
 .post-content__like-and-share__bookmark__icons:hover {
   color: #1b95e0;
   cursor: pointer;
+}
+
+.post-margin-top {
+  margin-top: 6rem;
 }
 
 .subscribe {
@@ -553,8 +559,6 @@ body {
 .header {
   border-bottom: 1px solid #38444d;
   padding: 2rem;
-  position: fixed;
-  width: 30.9%;
   display: flex;
   flex-direction: column;
   background-color: #010103;

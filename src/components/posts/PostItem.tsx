@@ -1,5 +1,6 @@
 import React, { useCallback, useMemo } from "react";
-import Image from "next/image";
+
+import { AiOutlineHeart, AiFillHeart, AiOutlineMessage } from "react-icons/ai";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -7,15 +8,13 @@ import {
   faRepeat,
   faArrowUpFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
-import {
-  faHeart,
-  faComment,
-  faBookmark,
-} from "@fortawesome/free-regular-svg-icons";
+import { faComment, faBookmark } from "@fortawesome/free-regular-svg-icons";
 
 import { useRouter } from "next/router";
 import useLoginModal from "@/hooks/useLoginModal";
 import useCurrentUser from "@/hooks/useCurrentUser";
+import useLike from "@/hooks/useLike";
+
 import { formatDistanceToNowStrict } from "date-fns";
 import Avatar from "../Avatar";
 
@@ -25,6 +24,8 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
   const loginModal = useLoginModal();
 
   const { data: currentUser } = useCurrentUser();
+
+  const { hasLiked, toggleLike } = useLike({ postId: data.id, userId });
 
   const goToUser = useCallback(
     (event: any) => {
@@ -43,9 +44,13 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
     (event: any) => {
       event.stopPropagation();
 
-      loginModal.onOpen();
+      if (!currentUser) {
+        return loginModal.onOpen();
+      }
+
+      toggleLike();
     },
-    [loginModal]
+    [loginModal, currentUser, toggleLike]
   );
 
   const createdAt = useMemo(() => {
@@ -56,8 +61,10 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
     return formatDistanceToNowStrict(new Date(data.createdAt));
   }, [data?.createdAt]);
 
+  const LikeIcon = hasLiked ? AiFillHeart : AiOutlineHeart;
+
   return (
-    <div className="post-content">
+    <div className="post-content" onClick={goToPost}>
       <div className="post-content__top">
         <div className="post-content__top__image">
           <Avatar userId={data.user.id} />
@@ -73,9 +80,9 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
         </div>
       </div>
       <div className="post-content__like-and-share">
-        <div className="post-content__like-and-share__icons">
-          <FontAwesomeIcon id="comment" icon={faComment} size="lg" />
-          <p id="comment">{data.comments?.length || 0}</p>
+        <div className="post-content__like-and-share__icons" id="comment">
+          <AiOutlineMessage size={18} />
+          <p>{data.comments?.length || 0}</p>
           {/* {data.comments >= 1000000
             ? (data.comments / 1000000).toFixed(0) + " mn"
             : data.comments >= 1000
@@ -83,9 +90,13 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
             : data.comments} */}
         </div>
 
-        <div className="post-content__like-and-share__icons" onClick={onLike}>
-          <FontAwesomeIcon id="like" icon={faHeart} size="lg" />
-          <p id="like">{data.likes?.length || 0}</p>
+        <div
+          className="post-content__like-and-share__icons"
+          onClick={onLike}
+          id="like"
+        >
+          <LikeIcon size={18} color={hasLiked ? "red" : ""} />
+          <p>{data.likedIds?.length || 0}</p>
           {/* {data.likes >= 1000000
             ? (data.likes / 1000000).toFixed(0) + " mn"
             : data.likes >= 1000
