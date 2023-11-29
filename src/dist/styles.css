@@ -259,7 +259,7 @@ body {
   align-items: center;
 }
 .post-content:hover {
-  background-color: rgba(248, 248, 248, 0.1529411765);
+  background-color: rgba(65, 65, 65, 0.1294117647);
   cursor: pointer;
 }
 .post-content__top {
@@ -1307,7 +1307,7 @@ nav {
   border-bottom: 1px solid #38444d;
 }
 .comment-box:hover {
-  background-color: rgba(248, 248, 248, 0.1529411765);
+  background-color: rgba(65, 65, 65, 0.1294117647);
 }
 .comment-box__content {
   display: flex;

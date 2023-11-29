@@ -23,9 +23,9 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
   const { mutate: mutatePost } = usePost(postId as string);
 
   const [body, setBody] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [image, setImage] = useState<string | null>(null);
 
-  const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = useCallback(async () => {
     try {
@@ -35,9 +35,11 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
 
       await axios.post(url, {
         body,
+        image,
       });
 
       setBody("");
+      setImage("");
       mutatePosts();
       mutatePost();
     } catch (error) {
@@ -55,13 +57,12 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
 
       reader.onload = () => {
         if (reader.result && typeof reader.result === "string") {
-          setImagePreview(reader.result);
+          setImage(reader.result);
         }
       };
-
       reader.readAsDataURL(file);
     } else {
-      setImagePreview(null);
+      setImage(null);
     }
   };
 
@@ -84,12 +85,12 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
                   placeholder={placeholder}
                 ></textarea>
               </div>
-              {imagePreview && (
+              {image && (
                 <div className="newpost-content__profileAndInput__image-preview">
-                  <img src={imagePreview} alt="Image Preview" />
+                  <img src={image} alt="Image Preview" />
                   <button
                     onClick={() => {
-                      setImagePreview(null);
+                      setImage(null);
                     }}
                   >
                     <FontAwesomeIcon icon={faX} />

@@ -82,6 +82,11 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
           <h4> {data.body} </h4>
         </div>
       </div>
+      {data.image && (
+        <div className="post-content__post-img">
+          <img src={data.image} alt="Image if their is one" />
+        </div>
+      )}
       <div className="post-content__like-and-share">
         <div className="post-content__like-and-share__icons" id="comment">
           <AiOutlineMessage size={18} />
