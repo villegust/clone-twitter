@@ -7,6 +7,7 @@
   font-weight: 600;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
+  min-width: 10%;
 }
 .bg-white {
   background-color: $color-white;
@@ -28,4 +29,9 @@
     opacity: 0.8;
     cursor: pointer;
   }
+}
+
+.outline {
+  background-color: $bg-black;
+  border: 1px solid $color-white;
 }

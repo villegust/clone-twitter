@@ -15,6 +15,7 @@ const Button: React.FC<ButtonProps> = ({
         test-btn 
         ${disabled ? "disable" : "allowed"}
         ${secondary ? "bg-white" : "bg-twitter"}
+        ${outline ? "outline" : ""}
     `}
     >
       {label}
