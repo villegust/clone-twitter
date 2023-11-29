@@ -3,10 +3,13 @@ import Image from "next/image";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
+
 import useRegisterModal from "@/hooks/useRegisterModal";
 import useLoginModal from "@/hooks/useLoginModal";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import usePosts from "@/hooks/usePosts";
+import usePost from "@/hooks/usePost";
+
 import axios from "axios";
 import Button from "./Button";
 import Avatar from "./Avatar";
@@ -17,6 +20,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
 
   const { data: currentUser } = useCurrentUser();
   const { mutate: mutatePosts } = usePosts(postId as string);
+  const { mutate: mutatePost } = usePost(postId as string);
 
   const [body, setBody] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -27,18 +31,21 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
     try {
       setIsLoading(true);
 
-      await axios.post("/api/posts", {
+      const url = isComment ? `/api/comments?postId=${postId}` : "/api/posts";
+
+      await axios.post(url, {
         body,
       });
 
       setBody("");
       mutatePosts();
+      mutatePost();
     } catch (error) {
       console.log(error);
     } finally {
       setIsLoading(false);
     }
-  }, [body, mutatePosts]);
+  }, [body, mutatePosts, mutatePost, isComment, postId]);
 
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files && e.target.files[0];
@@ -169,7 +176,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
                 <Button
                   disabled={isLoading || !body}
                   onClick={onSubmit}
-                  label="Make a post"
+                  label={isComment ? "Comment" : "Make a post"}
                 />
               </div>
             </div>

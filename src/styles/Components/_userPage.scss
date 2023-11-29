@@ -1,5 +1,7 @@
 @use "../globals" as *;
 
+// likes or posts
+
 .if-error {
   display: flex;
   justify-content: center;
@@ -14,7 +16,7 @@
   position: relative;
   height: 11rem;
   background-color: $color-grey;
-  margin-top: 6rem;
+  // margin-top: 6rem;
 
   &__bottom {
     position: absolute;

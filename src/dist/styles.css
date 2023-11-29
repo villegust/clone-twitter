@@ -172,7 +172,7 @@ body {
 .newpost-content__profileAndInput {
   display: flex;
   flex-direction: column;
-  padding: 3rem 3rem 0 3rem;
+  padding: 2rem 1rem 0.5rem 2rem;
   gap: 2rem;
 }
 .newpost-content__profileAndInput__text {
@@ -183,7 +183,7 @@ body {
   background-color: #010103;
   width: 100%;
   min-height: 40px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   border: none;
   resize: none;
   color: white;
@@ -258,13 +258,17 @@ body {
   flex-direction: column;
   align-items: center;
 }
+.post-content:hover {
+  background-color: rgba(248, 248, 248, 0.1529411765);
+  cursor: pointer;
+}
 .post-content__top {
   display: flex;
   width: 100%;
   align-items: center;
 }
 .post-content__top__image {
-  padding: 3rem 1rem 3rem 3rem;
+  padding: 2rem 1rem 2rem 2rem;
 }
 .post-content__top__text {
   display: flex;
@@ -1203,7 +1207,6 @@ nav {
   position: relative;
   height: 11rem;
   background-color: rgba(248, 248, 248, 0.1529411765);
-  margin-top: 6rem;
 }
 .cover-image__bottom {
   position: absolute;
@@ -1296,6 +1299,50 @@ nav {
 }
 .image-upload-container:hover {
   cursor: pointer;
+}
+
+.comment-box {
+  padding: 2rem 1rem 2rem 2rem;
+  cursor: pointer;
+  border-bottom: 1px solid #38444d;
+}
+.comment-box:hover {
+  background-color: rgba(248, 248, 248, 0.1529411765);
+}
+.comment-box__content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.comment-box .comment-names {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.comment-box .comment-names p {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.comment-box .comment-names p:hover {
+  text-decoration: underline;
+}
+.comment-box .comment-names span {
+  font-size: 1.4rem;
+  color: #7e7e7e;
+  cursor: pointer;
+  display: none;
+}
+@media (min-width: 768px) {
+  .comment-box .comment-names span {
+    display: block;
+  }
+}
+.comment-box .comment-text {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-top: 0.5rem;
 }
 
 .message-box {

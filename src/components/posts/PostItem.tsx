@@ -37,6 +37,9 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
   );
 
   const goToPost = useCallback(() => {
+    if (!currentUser) {
+      return loginModal.onOpen();
+    }
     router.push(`/posts/${data.id}`);
   }, [router, data.id]);
 

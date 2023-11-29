@@ -121,3 +121,11 @@ interface PostItemProps {
   data: Record<string, any>;
   userId?: string;
 }
+
+interface CommentFeedProps {
+  comments?: Record<string, any>[];
+}
+
+interface CommentItemProps {
+  data: Record<string, any>;
+}

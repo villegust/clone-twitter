@@ -5,13 +5,18 @@
   flex-direction: column;
   align-items: center;
 
+  &:hover {
+    background-color: $color-grey;
+    cursor: pointer;
+  }
+
   &__top {
     display: flex;
     width: 100%;
     align-items: center;
 
     &__image {
-      padding: 3rem 1rem 3rem 3rem;
+      padding: 2rem 1rem 2rem 2rem;
     }
     &__text {
       display: flex;

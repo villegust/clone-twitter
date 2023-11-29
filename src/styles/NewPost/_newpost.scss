@@ -9,7 +9,7 @@
   &__profileAndInput {
     display: flex;
     flex-direction: column;
-    padding: 3rem 3rem 0 3rem;
+    padding: 2rem 1rem 0.5rem 2rem;
     gap: 2rem;
 
     &__text {
@@ -20,7 +20,7 @@
         background-color: $bg-black;
         width: 100%;
         min-height: 40px;
-        font-size: 2rem;
+        font-size: 1.5rem;
         border: none;
         resize: none;
         color: white;
