@@ -1,11 +1,7 @@
 import React, { useState, useEffect, ReactNode } from "react";
 
-import { POST_DATA } from "../../data";
-import { TREND_DATA } from "../../data";
-
 import Sidebar from "@/components/layout/Sidebar";
 import FollowBar from "@/components/layout/FollowBar";
-import WriteMessage from "@/oldStuff/messagecomps/WriteMessage";
 import NewMessage from "@/components/modals/NewMessage";
 
 interface LayoutProps {
@@ -55,7 +51,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           pageName === "message" ? "grid-layout-message" : "grid-layout "
         }
       >
-        <Sidebar setPageName={setPageName} />
+        <Sidebar />
 
         <div className="main-content-borders">{children}</div>
 
@@ -79,7 +75,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <div className="messages-header">
                   <h2>{messageUser}</h2>
                 </div>
-                <WriteMessage pageName={pageName} />
               </>
             )}
           </div>
