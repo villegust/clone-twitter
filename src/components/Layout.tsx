@@ -2,7 +2,6 @@ import React, { useState, useEffect, ReactNode } from "react";
 
 import Sidebar from "@/components/layout/Sidebar";
 import FollowBar from "@/components/layout/FollowBar";
-import NewMessage from "@/components/modals/NewMessage";
 
 interface LayoutProps {
   children: ReactNode;
