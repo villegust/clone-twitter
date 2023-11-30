@@ -1,19 +1,11 @@
-import React, { useCallback, useEffect, useMemo } from "react";
+import React, { useCallback, useMemo } from "react";
 
-import { AiOutlineHeart, AiFillHeart, AiOutlineMessage } from "react-icons/ai";
+import { AiFillHeart, AiOutlineHeart, AiOutlineMessage } from "react-icons/ai";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChartSimple,
-  faRepeat,
-  faArrowUpFromBracket,
-} from "@fortawesome/free-solid-svg-icons";
-import { faComment, faBookmark } from "@fortawesome/free-regular-svg-icons";
-
-import { useRouter } from "next/router";
-import useLoginModal from "@/hooks/useLoginModal";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useLike from "@/hooks/useLike";
+import useLoginModal from "@/hooks/useLoginModal";
+import { useRouter } from "next/router";
 
 import { formatDistanceToNowStrict } from "date-fns";
 import Avatar from "../Avatar";

@@ -5,11 +5,7 @@ import Form from "@/components/Form";
 
 import PostFeed from "@/components/posts/PostFeed";
 
-export default function Home({
-  temporaryUser,
-  setTemporaryUser,
-  setMessageUser,
-}: any) {
+export default function Home() {
   return (
     <>
       <Head>

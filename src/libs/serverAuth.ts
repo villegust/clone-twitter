@@ -18,9 +18,8 @@ const serverAuth = async (req: NextApiRequest, res: NextApiResponse) => {
   });
 
   if (!currentUser) {
-    throw new Error("Not signed in");
+    throw new Error("User not found");
   }
-
   return { currentUser };
 };
 

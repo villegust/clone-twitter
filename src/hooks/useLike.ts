@@ -1,12 +1,9 @@
-import useSWR from "swr";
-
-import fetcher from "@/libs/fetcher";
+import axios from "axios";
+import { useCallback, useMemo } from "react";
 import useCurrentUser from "./useCurrentUser";
+import useLoginModal from "./useLoginModal";
 import usePost from "./usePost";
 import usePosts from "./usePosts";
-import useLoginModal from "./useLoginModal";
-import { useCallback, useMemo } from "react";
-import axios from "axios";
 
 const useLike = ({ postId, userId }: { postId: string; userId?: string }) => {
   const { data: currentUser } = useCurrentUser();
