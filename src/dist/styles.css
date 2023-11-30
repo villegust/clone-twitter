@@ -851,6 +851,10 @@ nav {
   }
 }
 
+.selected {
+  font-weight: 700;
+}
+
 .test-btn {
   border-radius: 10rem;
   padding: 1rem;

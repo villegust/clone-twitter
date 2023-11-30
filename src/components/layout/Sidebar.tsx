@@ -1,21 +1,18 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { BsHouseFill, BsBellFill } from "react-icons/bs";
-import { FaUser } from "react-icons/fa";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
+import { PiHouse, PiHouseSimpleFill } from "react-icons/pi";
+import { FaRegUser, FaUser } from "react-icons/fa6";
+import { GoBell, GoBellFill, GoBookmark, GoBookmarkFill } from "react-icons/go";
 
 import { useEffect, useState } from "react";
 
 import useCurrentUser from "@/hooks/useCurrentUser";
 import IsMobile from "../../oldStuff/isMobile/IsMobile";
-import SidebarLogo from "./SidebarLogo";
 import SidebarItem from "./SidebarItem";
-import SidebarTweetButton from "./SidebarTweetButton";
+import SidebarLogo from "./SidebarLogo";
 import SidebarProfile from "./SidebarProfile";
+import SidebarTweetButton from "./SidebarTweetButton";
 
 const Sidebar = () => {
   const { data: currentUser } = useCurrentUser();
@@ -43,21 +40,27 @@ const Sidebar = () => {
 
   const items = [
     {
-      icon: BsHouseFill,
+      icon: PiHouse,
       label: "Home",
       href: "/",
     },
     {
-      icon: BsBellFill,
+      icon: GoBell,
       label: "Notifications",
       href: "/notifications",
       auth: true,
       alert: currentUser?.hasNotification,
     },
     {
-      icon: FaUser,
+      icon: FaRegUser,
       label: "Profile",
       href: `/users/${currentUser?.id}`,
+      auth: true,
+    },
+    {
+      icon: GoBookmark,
+      label: "Bookmarks",
+      href: `/bookmarks/${currentUser?.id}`,
       auth: true,
     },
   ];
