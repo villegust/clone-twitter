@@ -52,6 +52,7 @@ const Sidebar = () => {
       label: "Notifications",
       href: "/notifications",
       auth: true,
+      alert: currentUser?.hasNotification,
     },
     {
       icon: FaUser,
@@ -72,11 +73,11 @@ const Sidebar = () => {
                 {items.map((item, index) => (
                   <SidebarItem
                     key={index}
-                    // alert={item.alert}
                     auth={item.auth}
                     href={item.href}
                     icon={item.icon}
                     label={item.label}
+                    alert={item.alert}
                   />
                 ))}
                 <SidebarTweetButton />

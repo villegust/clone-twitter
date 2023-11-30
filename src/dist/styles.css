@@ -750,7 +750,8 @@ nav {
 .sidebar-item__test .dot {
   position: absolute;
   left: 0;
-  top: -1rem;
+  top: -2rem;
+  color: #1b95e0;
 }
 
 .button-align {
@@ -1334,6 +1335,29 @@ nav {
   font-size: 1.5rem;
   color: #ffffff;
   margin-top: 0.5rem;
+}
+
+.no-notifications {
+  color: #7e7e7e;
+  text-align: center;
+  padding: 2rem;
+  font-size: 2rem;
+}
+
+.notification-content {
+  display: flex;
+  flex-direction: column;
+}
+.notification-content__box {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  gap: 1rem;
+  border-bottom: 1px solid #38444d;
+}
+.notification-content__box p {
+  font-size: 1.4rem;
+  color: #ffffff;
 }
 
 .message-box {
