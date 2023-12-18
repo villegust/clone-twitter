@@ -74,9 +74,9 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
           <h4> {data.body} </h4>
         </div>
       </div>
-      {data.image && (
+      {data.postImage && (
         <div className="post-content__post-img">
-          <img src={data.image} alt="Image if their is one" />
+          <img src={data.postImage} alt="Image if their is one" />
         </div>
       )}
       <div className="post-content__like-and-share">

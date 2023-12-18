@@ -14,13 +14,13 @@ export default async function handler(
   try {
     if (req.method === "POST") {
       const { currentUser } = await serverAuth(req, res);
-      const { body, image } = req.body;
+      const { body, postImage } = req.body;
 
       const post = await prisma.post.create({
         data: {
           body,
           userId: currentUser.id,
-          image,
+          postImage,
         },
       });
 

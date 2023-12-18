@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from "next";
-
 import serverAuth from "@/libs/serverAuth";
 
 export default async function handler(
@@ -15,7 +14,7 @@ export default async function handler(
 
     return res.status(200).json(currentUser);
   } catch (error) {
-    console.log(error);
-    return res.status(400).end();
+    console.error("Error in API route:", error);
+    return res.status(500).json({ error: "Internal Server Error" });
   }
 }

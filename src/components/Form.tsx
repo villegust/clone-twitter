@@ -23,7 +23,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
   const { mutate: mutatePost } = usePost(postId as string);
 
   const [body, setBody] = useState("");
-  const [image, setImage] = useState<string | null>(null);
+  const [postImage, setPostImage] = useState("");
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -35,11 +35,12 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
 
       await axios.post(url, {
         body,
-        image,
+        postImage,
       });
 
       setBody("");
-      setImage("");
+      setPostImage("");
+
       mutatePosts();
       mutatePost();
     } catch (error) {
@@ -49,20 +50,40 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
     }
   }, [body, mutatePosts, mutatePost, isComment, postId]);
 
-  const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files && e.target.files[0];
-
-    if (file) {
+  // image upload
+  const readFileAsDataURL = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
       const reader = new FileReader();
 
       reader.onload = () => {
         if (reader.result && typeof reader.result === "string") {
-          setImage(reader.result);
+          resolve(reader.result);
+        } else {
+          reject(new Error("Invalid result type from FileReader"));
         }
       };
+
+      reader.onerror = (error) => {
+        reject(error);
+      };
+
       reader.readAsDataURL(file);
+    });
+  };
+
+  const handleImageChange = async (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files && e.target.files[0];
+
+    if (file) {
+      try {
+        const imageDataUrl = await readFileAsDataURL(file);
+        setPostImage(imageDataUrl);
+      } catch (error) {
+        console.error("Error reading image:", error);
+        setPostImage(""); // Reset image in case of an error
+      }
     } else {
-      setImage(null);
+      setPostImage("");
     }
   };
 
@@ -85,12 +106,12 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
                   placeholder={placeholder}
                 ></textarea>
               </div>
-              {image && (
+              {postImage && (
                 <div className="newpost-content__profileAndInput__image-preview">
-                  <img src={image} alt="Image Preview" />
+                  <img src={postImage} alt="Image Preview" />
                   <button
                     onClick={() => {
-                      setImage(null);
+                      setPostImage("");
                     }}
                   >
                     <FontAwesomeIcon icon={faX} />
